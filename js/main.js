@@ -40,6 +40,7 @@ closeModal.addEventListener('click', function(){
 
     modalCourse.classList.remove('modal-course-active');
     document.querySelector('.modal-in').removeChild(coverModal);
+    document.body.style.overflow = 'auto';
 })
 
 // close modal with target
@@ -50,6 +51,7 @@ window.addEventListener('click', function(event){
 
         modalCourse.classList.remove('modal-course-active');
         modalSubmit.classList.remove('modal-submit-active');
+        document.body.style.overflow = 'auto';
     }
 })
 
@@ -72,8 +74,39 @@ showModalCourse.addEventListener('click', function(){
 closeSubmitBtn.addEventListener('click', function(){
     modalSubmit.classList.remove('modal-submit-active');
     document.querySelector('.modal-in-submit')
-    .removeChild(document.querySelector('.cover-body-modal'))
+    .removeChild(document.querySelector('.cover-body-modal'));
+    document.body.style.overflow = 'auto';
 })
 
 
 /* Modal-courses end */
+
+
+/* -- owl carousel -- */
+
+$(document).ready(function(){
+    
+    // New Phones Carousel
+    $("#news-div .owl-carousel").owlCarousel({
+        loop: true,
+        nav: false,
+        dots: true,
+        responsive:{
+            0:{
+                items: 1
+            },
+            600:{
+                items: 1
+            },
+            700:{
+                items: 2
+            },
+            950:{
+                items: 2
+            },
+            1000:{
+                items: 3
+            },
+        }
+    })
+})

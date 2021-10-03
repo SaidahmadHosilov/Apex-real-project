@@ -207,10 +207,19 @@ header .header-img-1 {
   object-fit: cover;
   z-index: -3;
 }
+header .filter-header {
+  position: absolute;
+  width: 284px;
+  height: 135px;
+  top: 630px;
+  right: 140px;
+  background: #cdecff;
+  filter: blur(25px);
+}
 header nav {
   max-width: 1166px;
   margin: auto;
-  padding: 30px 0;
+  padding: 30px 0 0 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -267,16 +276,24 @@ header .header-content {
   align-items: flex-start;
   flex-direction: column;
 }
-header .header-content h1 {
+header .header-content .row {
+  width: 100%;
+}
+header .header-content .row .header-content-in {
+  width: 60%;
+}
+header .header-content .row .header-content-in h1 {
+  margin: 120px 0 20px 0;
   color: #000;
   font-size: 53px;
   font-weight: 700;
   letter-spacing: 2%;
 }
-header .header-content p {
+header .header-content .row .header-content-in p {
+  margin-bottom: 40px;
   color: #000;
 }
-header .header-content .font-header-btn:hover {
+header .header-content .row .header-content-in .font-header-btn:hover {
   background-color: #ECFEFA;
   color: #000;
   border: 1px solid #000000;
@@ -292,15 +309,18 @@ header .header-content .font-header-btn:hover {
   header .header-content {
     max-width: 900px;
   }
-  header .header-content h1 {
+  header .header-content .row .header-content-in {
+    width: 75%;
+  }
+  header .header-content .row .header-content-in h1 {
     font-size: 35px;
     margin: 70px 0 20px 0 !important;
   }
-  header .header-content p {
+  header .header-content .row .header-content-in p {
     font-size: 20px;
     margin-bottom: 70px !important;
   }
-  header .header-content .btn-course {
+  header .header-content .row .header-content-in .btn-course {
     padding: 18px 35px !important;
   }
 }
@@ -310,6 +330,12 @@ header .header-content .font-header-btn:hover {
     right: 100px;
     width: 350px;
     height: 500px;
+  }
+  header .filter-header {
+    top: 520px;
+    right: 110px;
+    background: #cdecff;
+    filter: blur(25px);
   }
   header nav {
     max-width: 900px;
@@ -335,6 +361,10 @@ header .header-content .font-header-btn:hover {
     right: 80px;
     width: 300px;
     height: 450px;
+  }
+  header .filter-header {
+    top: 520px;
+    right: 70px;
   }
   header nav {
     position: relative;
@@ -390,6 +420,10 @@ header .header-content .font-header-btn:hover {
     width: 300px;
     height: 430px;
   }
+  header .filter-header {
+    top: 490px;
+    right: 50px;
+  }
   header nav {
     padding: 20px 30px;
     max-width: 900px;
@@ -414,6 +448,9 @@ header .header-content .font-header-btn:hover {
   header .header-img-1 {
     display: none;
   }
+  header .filter-header {
+    display: none;
+  }
   header nav {
     padding: 20px 30px;
     max-width: 900px;
@@ -422,17 +459,17 @@ header .header-content .font-header-btn:hover {
     max-width: 900px;
     padding: 0px 30px;
   }
-  header .header-content .row div {
+  header .header-content .row .header-content-in {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  header .header-content .row div h1 {
+  header .header-content .row .header-content-in h1 {
     text-align: center;
   }
-  header .header-content .row div p {
+  header .header-content .row .header-content-in p {
     text-align: center;
   }
   header .header-content h1 {
@@ -689,6 +726,107 @@ header .header-content .font-header-btn:hover {
   }
 }
 /* ========== !Header ========= */
+/* ========== Main part ========= */
+.main {
+  max-width: 1166px;
+  margin: 73px auto 150px auto;
+}
+.main #news-div {
+  width: 100%;
+}
+.main #news-div h1 {
+  margin-left: 12px;
+  color: #00445B;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 33px;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+}
+.main #news-div .owl-carousel .owl-dots .owl-dot span {
+  background-color: #646464;
+  height: 4px;
+  width: 35px;
+  border-radius: 0;
+}
+.main #news-div .owl-carousel .owl-dots .owl-dot.active span {
+  background-color: #00445B;
+}
+.main #news-div .owl-carousel .item {
+  max-width: 100%;
+  max-height: auto;
+}
+.main #news-div .owl-carousel .item img {
+  width: 100%;
+  object-fit: cover;
+}
+.main #news-div .owl-carousel .item .news-content {
+  padding: 10px 12px;
+}
+.main #news-div .owl-carousel .item .news-content h3 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 10px;
+}
+.main #news-div .owl-carousel .item .news-content span {
+  color: #646464;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.02em;
+}
+
+@media screen and (max-width: 1200px) {
+  .main {
+    max-width: 900px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .main {
+    max-width: 95%;
+    margin: 20px auto 100px auto;
+  }
+}
+@media screen and (max-width: 950px) {
+  .main {
+    max-width: 900px;
+    padding: 0 10%;
+    margin: 20px auto 100px auto;
+  }
+  .main #news-div .owl-carousel .owl-dots .owl-dot span {
+    background-color: #646464;
+    height: 4px;
+    width: 20px;
+    border-radius: 0;
+  }
+  .main #news-div .owl-carousel .item .news-content {
+    padding: 10px 30px;
+  }
+
+  .main #news-div .owl-carousel .item .news-content {
+    padding: 0 10px 0 12px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .main {
+    max-width: 96%;
+    padding: 0 10px;
+    margin: 20px auto 100px auto;
+  }
+  .main #news-div .owl-carousel .item .news-content {
+    padding: 10px 30px;
+  }
+
+  .main #news-div .owl-carousel .item .news-content {
+    padding: 0 10px 0 20px;
+  }
+}
+/* ========== !Main part ========= */
 .toTop {
   font-size: 35px;
   position: fixed;

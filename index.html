@@ -5,9 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apex</title>
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Awesome -->
+
+    <!-- Owl-carousel CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous" />
+        
+    <!-- Style css -->
     <link rel="stylesheet" href="./style/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Style css -->
+
 </head>
 <body id="body">
     <div class="toTop">
@@ -16,6 +25,7 @@
     <!-- Header start -->
     <header>
         <img src="./assets/images/header_img-2.png" class="header-img-1">
+        <div class="filter-header"></div>
         <nav>
             <div class="left-header-nav">
                 <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,7 +53,7 @@
         </nav>
         <div class="header-content">
             <div class="row">
-                <div class="col-md-7">
+                <div class="header-content-in col-md-7">
                     <h1 class="font-h2 mt-5 mb-3">Talaba bo‘lishingizga albatta ishonamiz</h1>
                     <p class="font-head-h-normal mb-5">Shaxmatda yo’lga chiqqan piyoda, bir kun kelib albatta vazir bo’ladi.</p>
                     <a class="font-header-btn">KURSGA YOZILISH</a>
@@ -95,11 +105,95 @@
     </div>
     <!-- !Header start -->
 
+    <div class="main">
+
+        <!-- News -->
+        <section id="news-div">
+            <h1>Yangiliklar</h1>
+
+            <!-- Owl-carousel -->
+            <div class="owl-carousel owl-theme">
+
+                <div class="item">
+                    <img src="./assets/images/news/img-1.png">
+                    <div class="news-content">
+                        <h3>Mental arifmetikani oson o‘rganamiz</h3>
+                        <span>22.09.2021</span>
+                    </div>        
+                </div>
+                <div class="item">
+                    <img src="./assets/images/news/img-2.png">
+                    <div class="news-content">
+                        <h3>IELTS imtihoni haqida</h3>
+                        <span>22.09.2021</span>
+                    </div>        
+                </div>
+                <div class="item">
+                    <img src="./assets/images/news/img-3.png">
+                    <div class="news-content">
+                        <h3>Ingliz tilini bilish zamon talabi</h3>
+                        <span>22.09.2021</span>
+                    </div>        
+                </div>
+
+                <div class="item">
+                    <img src="./assets/images/news/img-1.png">
+                    <div class="news-content">
+                        <h3>Mental arifmetikani oson o‘rganamiz</h3>
+                        <span>22.09.2021</span>
+                    </div>        
+                </div>
+                <div class="item">
+                    <img src="./assets/images/news/img-2.png">
+                    <div class="news-content">
+                        <h3>IELTS imtihoni haqida</h3>
+                        <span>22.09.2021</span>
+                    </div>        
+                </div>
+                <div class="item">
+                    <img src="./assets/images/news/img-3.png">
+                    <div class="news-content">
+                        <h3>Ingliz tilini bilish zamon talabi</h3>
+                        <span>22.09.2021</span>
+                    </div>        
+                </div>
+
+                <div class="item">
+                    <img src="./assets/images/news/img-1.png">
+                    <div class="news-content">
+                        <h3>Mental arifmetikani oson o‘rganamiz</h3>
+                        <span>22.09.2021</span>
+                    </div>        
+                </div>
+                <div class="item">
+                    <img src="./assets/images/news/img-2.png">
+                    <div class="news-content">
+                        <h3>IELTS imtihoni haqida</h3>
+                        <span>22.09.2021</span>
+                    </div>        
+                </div>
+                <div class="item">
+                    <img src="./assets/images/news/img-3.png">
+                    <div class="news-content">
+                        <h3>Ingliz tilini bilish zamon talabi</h3>
+                        <span>22.09.2021</span>
+                    </div>        
+                </div>
+                
+            </div>
+        <!-- !Owl-carousel -->
+
+        </section>
+        <!-- !News -->
+
+    </div>
    
-
-    <script src="./js/main.js"></script>
-
     <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    
+    <!-- Owl Carousel Js file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>
+    
+    <script src="./js/main.js"></script>
 </body>
 </html>
