@@ -290,7 +290,7 @@ header .header-content .row .header-content-in h1 {
   letter-spacing: 2%;
 }
 header .header-content .row .header-content-in p {
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   color: #000;
 }
 header .header-content .row .header-content-in .font-header-btn:hover {
@@ -438,7 +438,7 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   }
   header .header-content p {
     font-size: 20px;
-    margin-bottom: 70px !important;
+    margin-bottom: 50px !important;
   }
   header .header-content .btn-course {
     padding: 18px 35px !important;
@@ -478,7 +478,7 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   }
   header .header-content p {
     font-size: 20px;
-    margin-bottom: 70px !important;
+    margin-bottom: 50px !important;
   }
   header .header-content .btn-course {
     padding: 18px 35px !important;
@@ -780,6 +780,444 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   line-height: 17px;
   letter-spacing: 0.02em;
 }
+.main #courses-div {
+  width: 100%;
+}
+.main #courses-div h1 {
+  margin-left: 15px;
+  margin-top: 150px;
+  color: #00445B;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 33px;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 600px) {
+  .main #courses-div h1 {
+    margin-top: 50px;
+  }
+}
+.main #courses-div .owl-dots .owl-dot span {
+  background-color: #646464;
+  height: 4px;
+  width: 35px;
+  border-radius: 0;
+}
+@media screen and (max-width: 520px) {
+  .main #courses-div .owl-dots .owl-dot span {
+    width: 20px;
+  }
+}
+.main #courses-div .owl-dots .owl-dot.active span {
+  background-color: #00445B;
+}
+.main #courses-div .item {
+  max-width: 100%;
+}
+.main #courses-div .item .course-item {
+  padding: 0 15px;
+}
+.main #courses-div .item .course-item .course-main {
+  background-color: #ECFEFA;
+  width: 100%;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.13);
+}
+.main #courses-div .item .course-item .course-main a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.main #courses-div .item .course-item .course-main .course-content {
+  padding: 0 37px 37px 37px;
+}
+.main #courses-div .item .course-item .course-main .course-content a {
+  text-decoration: none;
+}
+.main #courses-div .item .course-item .course-main .course-content a h3 {
+  margin: 37px 0 10px 0;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+  color: #000;
+}
+.main #courses-div .item .course-item .course-main .course-content p {
+  margin-bottom: 30px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: 0.02em;
+  color: #000;
+}
+.main #courses-div .item .course-item .course-main .course-content button {
+  width: 100%;
+  background-color: #00445B;
+  padding: 15px 0;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border: 1px solid #00445B;
+  transition: 0.3s;
+  outline: none;
+}
+.main #courses-div .item .course-item .course-main .course-content button:hover {
+  background-color: #ECFEFA;
+  color: #000;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.main #teachers-div {
+  width: 100%;
+}
+.main #teachers-div h1 {
+  margin-left: 15px;
+  margin-top: 150px;
+  color: #00445B;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 33px;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 600px) {
+  .main #teachers-div h1 {
+    margin-top: 50px;
+  }
+}
+.main #teachers-div .owl-dots .owl-dot span {
+  background-color: #646464;
+  height: 4px;
+  width: 35px;
+  border-radius: 0;
+}
+@media screen and (max-width: 520px) {
+  .main #teachers-div .owl-dots .owl-dot span {
+    width: 20px;
+  }
+}
+.main #teachers-div .owl-dots .owl-dot.active span {
+  background-color: #00445B;
+}
+.main #teachers-div .item {
+  max-width: 100%;
+}
+.main #teachers-div .item .teacher-item {
+  padding: 0 15px;
+}
+.main #teachers-div .item .teacher-item .teacher-main {
+  background-color: #ECFEFA;
+  width: 100%;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.13);
+}
+.main #teachers-div .item .teacher-item .teacher-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.main #teachers-div .item .teacher-item .teacher-main .teacher-content {
+  padding: 0 37px 37px 37px;
+}
+.main #teachers-div .item .teacher-item .teacher-main .teacher-content h3 {
+  margin: 37px 0 10px 0;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+  color: #000;
+}
+.main #teachers-div .item .teacher-item .teacher-main .teacher-content p {
+  margin-top: 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: 0.02em;
+  color: #000;
+}
+.main #photos-div {
+  width: 100%;
+}
+.main #photos-div h1 {
+  margin-left: 15px;
+  margin-top: 150px;
+  color: #00445B;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 33px;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+}
+.main #photos-div .photos {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.main #photos-div .photos .photo-item {
+  width: 33.33333%;
+  display: flex;
+  justify-content: center;
+}
+.main #photos-div .photos .photo-item .item {
+  width: 100%;
+}
+.main #photos-div .photos .photo-item .item img {
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.13));
+  transition: 0.3s;
+}
+.main #photos-div .photos .photo-item .item img:hover {
+  transition: 0.3s;
+  transform: scale(1.03);
+}
+.main .img-modal.img-modal-active {
+  z-index: 99;
+  opacity: 1;
+  transform: translateY(0);
+  transition: 0.5s;
+}
+.main .img-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.5s;
+  z-index: -5;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.main .img-modal .modal-img-main {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.main .img-modal .modal-img-main .modal-img-item {
+  width: 800px;
+  height: auto;
+}
+.main .img-modal .modal-img-main .modal-img-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media screen and (max-width: 800px) {
+  .main .img-modal .modal-img-main .modal-img-item {
+    width: 500px;
+    height: auto;
+  }
+}
+@media screen and (max-width: 530px) {
+  .main .img-modal .modal-img-main .modal-img-item {
+    max-width: 500px;
+  }
+}
+.main #videos-div h1 {
+  margin-left: 15px;
+  margin-top: 150px;
+  color: #00445B;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 33px;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+}
+.main #videos-div .owl-dots .owl-dot span {
+  background-color: #646464;
+  height: 4px;
+  width: 35px;
+  border-radius: 0;
+}
+@media screen and (max-width: 520px) {
+  .main #videos-div .owl-dots .owl-dot span {
+    width: 20px;
+  }
+}
+.main #videos-div .owl-dots .owl-dot.active span {
+  background-color: #00445B;
+}
+.main #videos-div .owl-carousel .item .video-item {
+  padding: 0 15px;
+}
+.main #videos-div .owl-carousel .item .video-item .video-main {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+.main #videos-div .owl-carousel .item .video-item .video-main .video-cover {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-bottom: 56.25%;
+  z-index: 50;
+}
+.main #videos-div .owl-carousel .item .video-item .video-main iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.main .video-modal.video-modal-active {
+  z-index: 99;
+  opacity: 1;
+  transform: translateY(0px);
+  transition: 0.5s;
+}
+.main .video-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -9;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: 0.5s;
+  overflow-y: auto;
+}
+.main .video-modal .modal-video-main {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.main .video-modal .modal-video-main .modal-video-item {
+  width: 1050px;
+  height: auto;
+  overflow-y: auto;
+}
+.main .video-modal .modal-video-main .modal-video-item .video-top {
+  width: 100%;
+  height: 50px;
+  background-color: #00445B;
+  position: relative;
+}
+.main .video-modal .modal-video-main .modal-video-item .video-top i {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 25px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.main .video-modal .modal-video-main .modal-video-item .video-top i:hover {
+  transition: 0.5s;
+  transform: rotate(360deg);
+}
+.main .video-modal .modal-video-main .modal-video-item .video-content {
+  background: #ECFEFA;
+  width: 100%;
+  padding: 10px;
+}
+.main .video-modal .modal-video-main .modal-video-item .video-content .video-container {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+.main .video-modal .modal-video-main .modal-video-item .video-content .video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.main #result-div h1 {
+  margin-left: 15px;
+  margin-top: 150px;
+  color: #00445B;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 33px;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+}
+.main #result-div .owl-dots .owl-dot span {
+  background-color: #646464;
+  height: 4px;
+  width: 35px;
+  border-radius: 0;
+}
+@media screen and (max-width: 520px) {
+  .main #result-div .owl-dots .owl-dot span {
+    width: 20px;
+  }
+}
+.main #result-div .owl-dots .owl-dot.active span {
+  background-color: #00445B;
+}
+.main #result-div .item {
+  padding: 0 15px;
+  width: 100%;
+}
+.main #result-div .item .result-item {
+  width: 100%;
+  padding-top: 80px;
+}
+.main #result-div .item .result-item .result-main {
+  position: relative;
+  background: #ECFEFA;
+  padding: 95px 37px 37px 37px;
+  box-shadow: 0px 3.55979px 10.6794px rgba(0, 0, 0, 0.13);
+}
+.main #result-div .item .result-item .result-main img {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateY(-50%) translateX(-50%);
+  border-radius: 50%;
+  width: 110px;
+  height: 110px;
+}
+.main #result-div .item .result-item .result-main h3 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000;
+  letter-spacing: 0.02em;
+}
+.main #result-div .item .result-item .result-main p {
+  margin-top: 10px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: 0.02em;
+  color: #000;
+}
 
 @media screen and (max-width: 1200px) {
   .main {
@@ -807,6 +1245,9 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   .main #news-div .owl-carousel .item .news-content {
     padding: 10px 30px;
   }
+  .main #photos-div .photos .photo-item {
+    width: 50%;
+  }
 
   .main #news-div .owl-carousel .item .news-content {
     padding: 0 10px 0 12px;
@@ -821,13 +1262,27 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   .main #news-div .owl-carousel .item .news-content {
     padding: 10px 30px;
   }
+  .main #photos-div h1 {
+    margin-top: 50px;
+  }
+  .main #photos-div .photos .photo-item {
+    width: 100%;
+  }
 
   .main #news-div .owl-carousel .item .news-content {
     padding: 0 10px 0 20px;
   }
+
+  .main #videos-div h1 {
+    margin-top: 40px;
+  }
+
+  .main #result-div h1 {
+    margin-top: 50px;
+  }
 }
 /* ========== !Main part ========= */
-.toTop {
+.toTop a i {
   font-size: 35px;
   position: fixed;
   bottom: 30px;
@@ -835,9 +1290,11 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   color: #00445B;
   opacity: 0;
   transition: 0.5s;
+  background-color: #ECFEFA;
+  border-radius: 50%;
 }
 
-.toTop.toTopActive {
+.toTop.toTopActive a i {
   transition: 0.1s;
   opacity: 1;
   animation: animForToTop 1 1s;
