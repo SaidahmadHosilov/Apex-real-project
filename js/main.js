@@ -244,6 +244,30 @@ $(document).ready(function(){
             },
         }
     })
+
+    // Commits Carousel
+    $("#commits-div .owl-carousel").owlCarousel({
+        loop: true,
+        nav: false,
+        dots: true,
+        responsive:{
+            0:{
+                items: 1
+            },
+            600:{
+                items: 1
+            },
+            700:{
+                items: 2
+            },
+            950:{
+                items: 2
+            },
+            1000:{
+                items: 3
+            },
+        }
+    })
 })
 
 /* Modal video  */
