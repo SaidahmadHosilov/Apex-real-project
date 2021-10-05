@@ -2,9 +2,17 @@
 
 let menuIcon = document.getElementById('toggle-menu');
 let menu = document.querySelector('.right-header-nav');
+let menuIconX = document.getElementById('toggle-menu-x');
 
 menuIcon.addEventListener('click', function(){
-    menu.classList.toggle('active-menu');
+    menu.classList.add('active-menu');
+    menuIcon.style.display = 'none';
+    menuIconX.style.display = 'block'
+})
+menuIconX.addEventListener('click', function(){
+    menu.classList.remove('active-menu');
+    menuIconX.style.display = 'none';
+    menuIcon.style.display = 'block'
 })
 
 /* Header menu */
@@ -16,7 +24,20 @@ window.addEventListener('scroll', function(){
     } else {
         arrowTop.classList.remove('toTopActive');
     }
+
+    // if(window.pageXOffset > 950)
 })
+window.addEventListener('resize', function(){
+    if(document.body.clientWidth <= 950){
+        menu.classList.remove('active-menu');
+        menuIconX.style.display = 'none';
+        menuIcon.style.display = 'block';
+    } else {
+        menuIconX.style.display = 'none';
+        menuIcon.style.display = 'none';
+    }
+})
+
 
 /* Modal-course */
 let headerBtn = document.querySelector('.font-header-btn');
@@ -98,6 +119,12 @@ for(const btn of courseBtn){
 let images = document.querySelectorAll('#photos-div .photos img');
 let modalImgShow = document.querySelector('.img-modal');
 let modalImg = document.querySelector('.img-modal img');
+let closeModalImg = document.querySelector('#close-modal-img');
+
+closeModalImg.addEventListener('click', function(){
+    modalImgShow.classList.remove('img-modal-active');
+    document.body.style.overflow = 'auto';
+})
 for(const img of images){
     img.addEventListener('click', function(event){
         let targetImgSrc = event.target.getAttribute('src');
@@ -119,11 +146,22 @@ window.addEventListener('click', function(evt){
 
 /* Modal-courses end */
 
+// Footer modal
+let ftrBtn = document.querySelector('#footer-submit');
+
+ftrBtn.addEventListener('click', function(){
+    let coverModalBg = document.createElement('div');
+    coverModalBg.classList.add('cover-body-modal');
+    document.querySelector('.modal-in-submit').append(coverModalBg);
+
+    modalCourse.classList.remove('modal-course-active');
+    modalSubmit.classList.add('modal-submit-active');
+})
+// Footer modal
 
 /* -- owl carousel -- */
 
 $(document).ready(function(){
-    autoPlayYouTubeModal();
     
     // News Carousel
     $("#news-div .owl-carousel").owlCarousel({
@@ -292,23 +330,61 @@ for(const overlay of videosOverlay){
         console.log('success');
     })
 }
-window.addEventListener('click', function(e){
-    console.log(e.target);
-    console.log(e.currentTarget);
+
+// News Modal
+let newsModal = document.querySelector('.new-modal');
+let closeNewsModal = document.querySelector('.new-item-top i');
+let newsImages = document.querySelectorAll('.new-image');
+
+for(const image of newsImages){
+    image.addEventListener('click', function(evt){
+        let imgSrc = evt.target.getAttribute('src'); 
+        let newsTitle = evt.target.parentElement.querySelector('h3')
+        let newsDate = evt.target.parentElement.querySelector('span')
+
+        document.getElementById('new-modal-img').src = imgSrc;
+        document.getElementById('title-img-modal').innerHTML = newsTitle.textContent;
+        document.getElementById('img-modal-date').innerHTML = newsDate.textContent;
+        document.getElementById('some-info').innerHTML = 
+        evt.target.parentElement.querySelector('.some-info').textContent;
+        document.getElementById('desc_title').innerHTML = 
+        evt.target.parentElement.querySelector('.desc_title').textContent;
+        document.getElementById('description').innerHTML = 
+        evt.target.parentElement.querySelector('.description').textContent;
+        
+
+        newsModal.classList.add('new-modal-active');
+        document.body.style.overflow = 'hidden';
+    })
+}
+
+window.addEventListener('click', function(evt){
+    if(evt.target.classList[0] == 'modal-new-main'){
+        newsModal.classList.remove('new-modal-active');
+        document.body.style.overflow = 'auto';
+    }
 })
+
+closeNewsModal.addEventListener('click', function(){
+    newsModal.classList.remove('new-modal-active');
+    document.body.style.overflow = 'auto';
+})
+
+// News Modal
+
 
 /* Modal video  */
 
-function autoPlayYouTubeModal() {
-    var trigger = $('.trigger');
-    trigger.click(function(e) {
-    e.preventDefault();
-    var theModal = $(this).data("target");
-    var videoSRC = $(this).attr("src");
-    var videoSRCauto = videoSRC + "?autoplay=1";
-    $(theModal + ' iframe').attr('src', videoSRCauto);
-    $(theModal).on('hidden.bs.modal', function(e) {
-        $(theModal + ' iframe').attr('src', '');
-    });
-    });
-};
+// function autoPlayYouTubeModal() {
+//     var trigger = $('.trigger');
+//     trigger.click(function(e) {
+//     e.preventDefault();
+//     var theModal = $(this).data("target");
+//     var videoSRC = $(this).attr("src");
+//     var videoSRCauto = videoSRC + "?autoplay=1";
+//     $(theModal + ' iframe').attr('src', videoSRCauto);
+//     $(theModal).on('hidden.bs.modal', function(e) {
+//         $(theModal + ' iframe').attr('src', '');
+//     });
+//     });
+// };
