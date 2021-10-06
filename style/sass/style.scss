@@ -482,7 +482,7 @@ header{
 }
 
 .modal-course.modal-course-active{
-    z-index: 90;
+    z-index: 9999;
     transform: translateY(0);
     transition: 0.4s;
     opacity: 1;
@@ -527,7 +527,7 @@ header{
 
 // submit modal
 .modal-course-submit.modal-submit-active{
-    z-index: 90;
+    z-index: 9999;
     transform: translateY(0);
     transition: 0.4s;
     opacity: 1;
@@ -905,26 +905,26 @@ header{
                     background-color: #ECFEFA;
                     width: 100%;
                     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.13);
-                    a{
-                        img{
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                        }
+                    .hidden{
+                        display: none;
+                    }
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        cursor: pointer;
                     }
                     .course-content{
                         padding: 0 37px 37px 37px;
-                        a{
-                            text-decoration: none;
-                            h3{
-                                margin: 37px 0 10px 0;
-                                font-style: normal;
-                                font-weight: bold;
-                                font-size: 18px;
-                                line-height: 22px;
-                                letter-spacing: 0.02em;
-                                color: $color-black;
-                            }
+                        h3{
+                            margin: 37px 0 10px 0;
+                            font-style: normal;
+                            font-weight: bold;
+                            font-size: 18px;
+                            line-height: 22px;
+                            letter-spacing: 0.02em;
+                            color: $color-black;
+                            cursor: pointer;
                         }
                         p{
                             margin-bottom: 30px;
@@ -960,7 +960,160 @@ header{
             }
         }
     }
-
+    // modal
+    .course-modal-intro.course-modal-intro-active{
+        opacity: 1;
+        transition: 0.5s;
+        z-index: 99;
+        transform: translateY(0);
+    }
+    .course-modal-intro{
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        transition: 0.5s;
+        z-index: -9;
+        transform: translateY(-10px);
+        overflow-y: auto;
+        .course-intro-in{
+            background-color: rgba(0, 0, 0, 0.7);
+            min-height: 100%;
+            width: 100%;
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .course-intro-item{
+                width: 1000px;
+                min-height: 600px;
+                background-color: #BEE9FF;
+                .course-item-top{
+                    background-color: $color-primary;
+                    width: 100%;
+                    height: 40px;
+                    display: flex;
+                    justify-content: end;
+                    align-items: center;
+                    padding: 0 15px;
+                    i{
+                        color: $color-white;
+                        font-size: 20px;
+                        transition: 0.3s;
+                        cursor: pointer;
+                    }
+                    i:hover{
+                        transition: 0.3s;
+                        transform: rotate(180deg);
+                    }
+                }
+                .course-item-content{
+                    padding: 10px 25px;
+                    .item-top{
+                        display: flex;
+                        flex-wrap: wrap;
+                        .item-top-left{
+                            width: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                        .item-top-right{
+                            width: 50%;
+                            padding: 0 20px;
+                            h2{
+                                margin: 20px 0;
+                                font-style: normal;
+                                font-weight: bold;
+                                font-size: 30px;
+                                line-height: 22px;
+                                letter-spacing: 0.02em;
+                                color: $color-black;
+                            }
+                            span{
+                                margin-bottom: 30px;
+                                font-style: normal;
+                                font-weight: normal;
+                                font-size: 20px;
+                                line-height: 120%;
+                                letter-spacing: 0.02em;
+                                color: $color-black;
+                            }
+                        }
+                    }
+                    @media screen and (max-width: 800px){
+                        .item-top{
+                            flex-direction: column-reverse;
+                            .item-top-left{
+                                width: 100%;
+                                img{
+                                    width: 100%;
+                                    object-fit: cover;
+                                }
+                            }
+                            .item-top-right{
+                                width: 100%;
+                                padding: 0 0 20px 0;
+                            }
+                        }
+                    }
+                    .item-bottom{
+                        width: 100%;
+                        h3{
+                            margin: 30px 0;
+                            font-style: normal;
+                            font-weight: bold;
+                            font-size: 25px;
+                            line-height: 22px;
+                            letter-spacing: 0.02em;
+                            color: $color-black;
+                        }
+                        p{
+                            margin-bottom: 30px;
+                            font-style: normal;
+                            font-weight: normal;
+                            font-size: 18px;
+                            line-height: 120%;
+                            letter-spacing: 0.02em;
+                            color: $color-black;
+                            text-align: justify;
+                        }
+                        button{
+                            text-decoration: none;
+                            color: $color-white;
+                            padding: 15px 45px;
+                            background: $color-primary;
+                            cursor: pointer;
+                            border: none;
+                            font-weight: 700;
+                            border: 1px solid $color-primary;
+                            margin: 0 auto 20px auto;
+                            display: block;
+                        }
+                        button:hover{
+                            background-color: $color-hover;
+                            color: $color-black;
+                            border: 1px solid $color-black;
+                            box-sizing: border-box;
+                            transition: 0.3s;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 500px){
+            .course-intro-in{
+                padding: 30px 10px;
+            }
+        }
+    }
+    // modal
     // Courses section
 
     // Techers section
@@ -1189,23 +1342,39 @@ header{
                     .video-main{
                         position: relative;
                         width: 100%;
-                        height: 0;
-                        padding-bottom: 56.25%;
-                        .video-cover{
-                            position: absolute;
-                            top: 60px;
-                            left: 0;
-                            right: 0;
-                            bottom: 0;
-                            padding-bottom: 56.25%;
-                            z-index: 50;
+                        height: auto;
+                        img{
+                            width: 100%;
+                            object-fit: cover;
                         }
-                        iframe{
+                        .video-cover{
                             position: absolute;
                             top: 0;
                             left: 0;
-                            width: 100%;
-                            height: 100%;
+                            right: 0;
+                            bottom: 0;
+                            z-index: 2;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            transition: 0.3s;
+                            cursor: pointer;
+                            i{
+                                transition: 0.3s;
+                                cursor: pointer;
+                                font-size: 40px;
+                            }
+                        }
+                        .video-cover:hover{
+                            background-color: rgba(0, 0, 0, 0.3);
+                            transition: 0.3s;
+                        }
+                        .video-cover:hover i, .video-cover i:hover{
+                            color: red;
+                            transition: 0.3s;
+                        }
+                        iframe{
+                            display: none;
                         }
                     }
                 }
@@ -1266,19 +1435,24 @@ header{
                     width: 100%;
                     padding: 10px;
                     .video-container{
-                        width: 100%;
-                        height: 0;
-                        padding-bottom: 56.25%;
+                        height: 100%;
                         position: relative;
+                        padding-bottom: 56.25%;
                         iframe{
                             position: absolute;
-                            top: 0;
+                            top:0;
                             left: 0;
-                            width: 100%;
                             height: 100%;
+                            width: 100%;
+                            object-fit: cover;
                         }
                     }
                 }
+            }
+        }
+        @media screen and (max-width: 600px){
+            .modal-video-main{
+                padding: 10px;
             }
         }
     }

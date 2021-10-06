@@ -46,7 +46,8 @@ let closeModal = document.getElementById('close-modal-course')
 let showModalCourse = document.querySelector('#modal-course-btn');
 
 // create cover modal div and show modal
-headerBtn.addEventListener('click', function(){
+headerBtn.addEventListener('click', function(e){
+    e.preventDefault();
     let coverModalBg = document.createElement('div');
     coverModalBg.classList.add('cover-body-modal');
     document.querySelector('.modal-in').append(coverModalBg);
@@ -80,7 +81,8 @@ window.addEventListener('click', function(event){
 let closeSubmitBtn = document.querySelector('#close-submit-btn');
 let modalSubmit = document.querySelector('.modal-course-submit');
 
-showModalCourse.addEventListener('click', function(){
+showModalCourse.addEventListener('click', function(e){
+    e.preventDefault();
     let coverModalBg = document.createElement('div');
     coverModalBg.classList.add('cover-body-modal');
     document.querySelector('.modal-in-submit').append(coverModalBg);
@@ -149,7 +151,8 @@ window.addEventListener('click', function(evt){
 // Footer modal
 let ftrBtn = document.querySelector('#footer-submit');
 
-ftrBtn.addEventListener('click', function(){
+ftrBtn.addEventListener('click', function(e){
+    e.preventDefault();
     let coverModalBg = document.createElement('div');
     coverModalBg.classList.add('cover-body-modal');
     document.querySelector('.modal-in-submit').append(coverModalBg);
@@ -310,27 +313,6 @@ $(document).ready(function(){
 
 /* Modal video  */
 
-let closeVideo = document.getElementById('modal-video-close');
-let videoModal = document.querySelector('.video-modal');
-
-closeVideo.addEventListener('click', function(){
-    let videoCtn = document.querySelector('.video-container');
-    let videoIframe = document.querySelector('.video-container iframe');
-
-    videoCtn.removeChild(videoIframe);
-    videoModal.classList.remove('video-modal-active');
-})
-
-let videosOverlay = document.querySelectorAll('#videos-div .ytp-large-play-button');
-
-for(const overlay of videosOverlay){
-    overlay.addEventListener('click', function(event){
-        console.log(event.target);
-        console.log(event.currentTarget);
-        console.log('success');
-    })
-}
-
 // News Modal
 let newsModal = document.querySelector('.new-modal');
 let closeNewsModal = document.querySelector('.new-item-top i');
@@ -372,19 +354,143 @@ closeNewsModal.addEventListener('click', function(){
 
 // News Modal
 
+// Course intro
+let courseIntroX = document.getElementById('course-intro-close');
+let courseIntroModal = document.querySelector('.course-modal-intro');
+let introImages = document.querySelectorAll('.course-main img');
+let introCrsH3 = document.querySelectorAll('.course-main h3');
+
+document.querySelector('.course-btn-info').addEventListener('click', function(){
+    courseIntroModal.classList.remove('course-modal-intro-active');
+    let coverModalBg = document.createElement('div');
+    coverModalBg.classList.add('cover-body-modal');
+    document.querySelector('.modal-in').append(coverModalBg);
+    
+    modalCourse.classList.add('modal-course-active');
+})
+
+for(const h of introCrsH3){
+    h.addEventListener('click', function(){
+        courseIntroModal.classList.add('course-modal-intro-active');
+        document.body.style.overflow = 'hidden';   
+    })
+}
+for(const img of introImages){
+    img.addEventListener('click', function(evt){
+        var parentE = evt.target.parentElement; 
+
+        document.querySelector('.item-top-left img').src = 
+            parentE.querySelector('img').getAttribute('src');
+        document.querySelector('.item-top-right h2').innerHTML = 
+            parentE.querySelector('.course-content h3').textContent;
+        document.querySelector('.item-top-right span').innerHTML = 
+            parentE.querySelector('.course-content p').textContent;
+        document.querySelector('.course-modal-intro h3').innerHTML = 
+            parentE.querySelector('.hidden h1').textContent;
+        document.querySelector('.course-modal-intro .introP1').innerHTML = 
+            parentE.querySelector('.hidden p').textContent;
+        document.querySelector('.course-modal-intro .introP2').innerHTML = 
+            parentE.querySelector('.hidden span').textContent;
+
+        courseIntroModal.classList.add('course-modal-intro-active');
+        document.body.style.overflow = 'hidden';   
+    })
+}
+window.addEventListener('click', function(evt){
+    if(evt.target.classList == 'course-intro-in'){
+        courseIntroModal.classList.remove('course-modal-intro-active');
+        document.body.style.overflow = 'auto';    
+    }
+})
+courseIntroX.addEventListener('click', function(){
+    courseIntroModal.classList.remove('course-modal-intro-active');
+    document.body.style.overflow = 'auto';
+})
+
+// !Course intro
 
 /* Modal video  */
 
-// function autoPlayYouTubeModal() {
-//     var trigger = $('.trigger');
-//     trigger.click(function(e) {
-//     e.preventDefault();
-//     var theModal = $(this).data("target");
-//     var videoSRC = $(this).attr("src");
-//     var videoSRCauto = videoSRC + "?autoplay=1";
-//     $(theModal + ' iframe').attr('src', videoSRCauto);
-//     $(theModal).on('hidden.bs.modal', function(e) {
-//         $(theModal + ' iframe').attr('src', '');
-//     });
-//     });
-// };
+// ******************** YouTube Video Link ********************** \\
+
+let videoIframes = document.querySelectorAll('#videos-div .video-iframe');
+for( const ifr of videoIframes ) {
+    // quality options: low, medium, high, max | default is max.
+    var thumbnail = get_youtube_thumbnail( ifr.src, 'medium');
+    var img = ifr.parentElement.querySelector('img');
+
+    img.src = thumbnail;
+
+}
+
+
+// var thumbnail = get_youtube_thumbnail('https://youtu.be/WZKW2Hq2fks', 'medium');
+
+
+
+function get_youtube_thumbnail(url, quality){
+    if(url){
+        var video_id, thumbnail, result;
+        if(result = url.match(/youtube\.com.*(\?v=|\/embed\/)(.{11})/))
+        {
+            video_id = result.pop();
+        }
+        else if(result = url.match(/youtu.be\/(.{11})/))
+        {
+            video_id = result.pop();
+        }
+
+        if(video_id){
+            if(typeof quality == "undefined"){
+                quality = 'high';
+            }
+        
+            var quality_key = 'maxresdefault'; // Max quality
+            if(quality == 'low'){
+                quality_key = 'sddefault';
+            }else if(quality == 'medium'){
+                quality_key = 'mqdefault';
+            } else if (quality == 'high') {
+                quality_key = 'hqdefault';
+            }
+
+            var thumbnail = "http://img.youtube.com/vi/"+video_id+"/"+quality_key+".jpg";
+            return thumbnail;
+        }
+    }
+    return false;
+}
+
+let trgVideos = document.querySelectorAll('#videos-div .video-cover');
+let videoModal = document.querySelector('.video-modal');
+let videoClose = document.getElementById('modal-video-close');
+
+for(const trgVideo of trgVideos){
+    trgVideo.addEventListener('click', function(){
+        let ifr = trgVideo.parentElement.querySelector('iframe');
+        let clone = ifr.cloneNode(true);
+        let modalIfr = videoModal.querySelector('.video-container');
+
+        modalIfr.appendChild(clone);
+
+        document.body.style.overflow = 'hidden';
+        videoModal.classList.add('video-modal-active');
+    })
+}
+
+// close
+videoClose.addEventListener('click', function(){
+    document.body.style.overflow = 'auto';
+    videoModal.classList.remove('video-modal-active');
+    videoModal.querySelector('iframe').remove();
+})
+
+window.addEventListener('click', function(evt){
+    if(evt.target.classList == 'modal-video-main'){
+    videoModal.querySelector('iframe').remove();
+    document.body.style.overflow = 'auto';
+        videoModal.classList.remove('video-modal-active');
+    }
+})
+
+// ******************** YouTube Video Link ********************** \\

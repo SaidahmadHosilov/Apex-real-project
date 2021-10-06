@@ -624,7 +624,7 @@ header .header-content .row .header-content-in .font-header-btn:hover {
 }
 
 .modal-course.modal-course-active {
-  z-index: 90;
+  z-index: 9999;
   transform: translateY(0);
   transition: 0.4s;
   opacity: 1;
@@ -657,7 +657,7 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   }
 }
 .modal-course-submit.modal-submit-active {
-  z-index: 90;
+  z-index: 9999;
   transform: translateY(0);
   transition: 0.4s;
   opacity: 1;
@@ -998,18 +998,19 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   width: 100%;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.13);
 }
-.main #courses-div .item .course-item .course-main a img {
+.main #courses-div .item .course-item .course-main .hidden {
+  display: none;
+}
+.main #courses-div .item .course-item .course-main img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;
 }
 .main #courses-div .item .course-item .course-main .course-content {
   padding: 0 37px 37px 37px;
 }
-.main #courses-div .item .course-item .course-main .course-content a {
-  text-decoration: none;
-}
-.main #courses-div .item .course-item .course-main .course-content a h3 {
+.main #courses-div .item .course-item .course-main .course-content h3 {
   margin: 37px 0 10px 0;
   font-style: normal;
   font-weight: bold;
@@ -1017,6 +1018,7 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   line-height: 22px;
   letter-spacing: 0.02em;
   color: #000;
+  cursor: pointer;
 }
 .main #courses-div .item .course-item .course-main .course-content p {
   margin-bottom: 30px;
@@ -1046,6 +1048,158 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   box-sizing: border-box;
   transition: 0.3s;
   cursor: pointer;
+}
+.main .course-modal-intro.course-modal-intro-active {
+  opacity: 1;
+  transition: 0.5s;
+  z-index: 99;
+  transform: translateY(0);
+}
+.main .course-modal-intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: 0.5s;
+  z-index: -9;
+  transform: translateY(-10px);
+  overflow-y: auto;
+}
+.main .course-modal-intro .course-intro-in {
+  background-color: rgba(0, 0, 0, 0.7);
+  min-height: 100%;
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .course-modal-intro .course-intro-in .course-intro-item {
+  width: 1000px;
+  min-height: 600px;
+  background-color: #BEE9FF;
+}
+.main .course-modal-intro .course-intro-in .course-intro-item .course-item-top {
+  background-color: #00445B;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 0 15px;
+}
+.main .course-modal-intro .course-intro-in .course-intro-item .course-item-top i {
+  color: #fff;
+  font-size: 20px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.main .course-modal-intro .course-intro-in .course-intro-item .course-item-top i:hover {
+  transition: 0.3s;
+  transform: rotate(180deg);
+}
+.main .course-modal-intro .course-intro-in .course-intro-item .course-item-content {
+  padding: 10px 25px;
+}
+.main .course-modal-intro .course-intro-in .course-intro-item .course-item-content .item-top {
+  display: flex;
+  flex-wrap: wrap;
+}
+.main .course-modal-intro .course-intro-in .course-intro-item .course-item-content .item-top .item-top-left {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .course-modal-intro .course-intro-in .course-intro-item .course-item-content .item-top .item-top-left img {
+  width: 100%;
+}
+.main .course-modal-intro .course-intro-in .course-intro-item .course-item-content .item-top .item-top-right {
+  width: 50%;
+  padding: 0 20px;
+}
+.main .course-modal-intro .course-intro-in .course-intro-item .course-item-content .item-top .item-top-right h2 {
+  margin: 20px 0;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+  color: #000;
+}
+.main .course-modal-intro .course-intro-in .course-intro-item .course-item-content .item-top .item-top-right span {
+  margin-bottom: 30px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0.02em;
+  color: #000;
+}
+@media screen and (max-width: 800px) {
+  .main .course-modal-intro .course-intro-in .course-intro-item .course-item-content .item-top {
+    flex-direction: column-reverse;
+  }
+  .main .course-modal-intro .course-intro-in .course-intro-item .course-item-content .item-top .item-top-left {
+    width: 100%;
+  }
+  .main .course-modal-intro .course-intro-in .course-intro-item .course-item-content .item-top .item-top-left img {
+    width: 100%;
+    object-fit: cover;
+  }
+  .main .course-modal-intro .course-intro-in .course-intro-item .course-item-content .item-top .item-top-right {
+    width: 100%;
+    padding: 0 0 20px 0;
+  }
+}
+.main .course-modal-intro .course-intro-in .course-intro-item .course-item-content .item-bottom {
+  width: 100%;
+}
+.main .course-modal-intro .course-intro-in .course-intro-item .course-item-content .item-bottom h3 {
+  margin: 30px 0;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+  color: #000;
+}
+.main .course-modal-intro .course-intro-in .course-intro-item .course-item-content .item-bottom p {
+  margin-bottom: 30px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 0.02em;
+  color: #000;
+  text-align: justify;
+}
+.main .course-modal-intro .course-intro-in .course-intro-item .course-item-content .item-bottom button {
+  text-decoration: none;
+  color: #fff;
+  padding: 15px 45px;
+  background: #00445B;
+  cursor: pointer;
+  border: none;
+  font-weight: 700;
+  border: 1px solid #00445B;
+  margin: 0 auto 20px auto;
+  display: block;
+}
+.main .course-modal-intro .course-intro-in .course-intro-item .course-item-content .item-bottom button:hover {
+  background-color: #ECFEFA;
+  color: #000;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  transition: 0.3s;
+  cursor: pointer;
+}
+@media screen and (max-width: 500px) {
+  .main .course-modal-intro .course-intro-in {
+    padding: 30px 10px;
+  }
 }
 .main #teachers-div {
   width: 100%;
@@ -1251,24 +1405,40 @@ header .header-content .row .header-content-in .font-header-btn:hover {
 .main #videos-div .owl-carousel .item .video-item .video-main {
   position: relative;
   width: 100%;
-  height: 0;
-  padding-bottom: 56.25%;
+  height: auto;
+}
+.main #videos-div .owl-carousel .item .video-item .video-main img {
+  width: 100%;
+  object-fit: cover;
 }
 .main #videos-div .owl-carousel .item .video-item .video-main .video-cover {
   position: absolute;
-  top: 60px;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  padding-bottom: 56.25%;
-  z-index: 50;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.main #videos-div .owl-carousel .item .video-item .video-main .video-cover i {
+  transition: 0.3s;
+  cursor: pointer;
+  font-size: 40px;
+}
+.main #videos-div .owl-carousel .item .video-item .video-main .video-cover:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+.main #videos-div .owl-carousel .item .video-item .video-main .video-cover:hover i, .main #videos-div .owl-carousel .item .video-item .video-main .video-cover i:hover {
+  color: red;
+  transition: 0.3s;
 }
 .main #videos-div .owl-carousel .item .video-item .video-main iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  display: none;
 }
 .main .video-modal.video-modal-active {
   z-index: 99;
@@ -1328,17 +1498,22 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   padding: 10px;
 }
 .main .video-modal .modal-video-main .modal-video-item .video-content .video-container {
-  width: 100%;
-  height: 0;
-  padding-bottom: 56.25%;
+  height: 100%;
   position: relative;
+  padding-bottom: 56.25%;
 }
 .main .video-modal .modal-video-main .modal-video-item .video-content .video-container iframe {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
   height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+@media screen and (max-width: 600px) {
+  .main .video-modal .modal-video-main {
+    padding: 10px;
+  }
 }
 .main #result-div h1 {
   margin-left: 15px;
