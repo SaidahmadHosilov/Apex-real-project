@@ -82,16 +82,23 @@ let closeSubmitBtn = document.querySelector('#close-submit-btn');
 let modalSubmit = document.querySelector('.modal-course-submit');
 
 showModalCourse.addEventListener('click', function(e){
-    e.preventDefault();
-    let coverModalBg = document.createElement('div');
-    coverModalBg.classList.add('cover-body-modal');
-    document.querySelector('.modal-in-submit').append(coverModalBg);
-
-    modalCourse.classList.remove('modal-course-active');
-    modalSubmit.classList.add('modal-submit-active');
-
-    document.querySelector('.modal-course .modal-in')
-    .removeChild(document.querySelector('.modal-course .cover-body-modal'));
+    let count = 0;
+    let inputs = showModalCourse.parentElement.parentElement.querySelectorAll('input');
+    for(const npt of inputs){
+        if(npt.value == '') count += 1;
+    }
+    if(count == 0) {
+        e.preventDefault();
+        let coverModalBg = document.createElement('div');
+        coverModalBg.classList.add('cover-body-modal');
+        document.querySelector('.modal-in-submit').append(coverModalBg);
+    
+        modalCourse.classList.remove('modal-course-active');
+        modalSubmit.classList.add('modal-submit-active');
+    
+        document.querySelector('.modal-course .modal-in')
+        .removeChild(document.querySelector('.modal-course .cover-body-modal'));
+    }
 })
 
 closeSubmitBtn.addEventListener('click', function(){
@@ -150,15 +157,37 @@ window.addEventListener('click', function(evt){
 
 // Footer modal
 let ftrBtn = document.querySelector('#footer-submit');
+let ftrForm = document.getElementById('footer-form');
+
+// ftrForm.noValidate = true;
+
+// ftrForm.addEventListener('submit', function handleFormSubmit(event) {
+//     const isValid = form.reportValidity();
+  
+//     if (isValid) {
+//       // POST form data to backend with fetch
+//     }
+
+    
+//     event.preventDefault();
+// });
 
 ftrBtn.addEventListener('click', function(e){
-    e.preventDefault();
-    let coverModalBg = document.createElement('div');
-    coverModalBg.classList.add('cover-body-modal');
-    document.querySelector('.modal-in-submit').append(coverModalBg);
+    let inputs = ftrForm.querySelectorAll('input');
+    let count = 0;
+    for(const npt of inputs){
+        if(npt.value == '') count += 1;
+    }
 
-    modalCourse.classList.remove('modal-course-active');
-    modalSubmit.classList.add('modal-submit-active');
+    if(count == 0){
+        let coverModalBg = document.createElement('div');
+        coverModalBg.classList.add('cover-body-modal');
+        document.querySelector('.modal-in-submit').append(coverModalBg);
+
+        modalCourse.classList.remove('modal-course-active');
+        modalSubmit.classList.add('modal-submit-active');
+        e.preventDefault();
+    }
 })
 // Footer modal
 

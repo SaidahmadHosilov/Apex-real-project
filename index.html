@@ -80,11 +80,11 @@
                 </div>
                 <div class="modal-c-body">
                     <h1>Kursga yozilish</h1>
-                    <form class="course-form" action="#" method="#">
-                        <input type="text" name="name" placeholder="Ism va familiyangizni yozing">
-                        <input type="number" name="phone-number" placeholder="Telefon raqamingizni yozing">
+                    <form class="course-form" action="#" method="POST">
+                        <input type="text" required name="name" placeholder="Ism va familiyangizni yozing">
+                        <input type="number" required name="phone-number" placeholder="Telefon raqamingizni yozing">
                         <div>
-                            <button type="submit" id="modal-course-btn" class="font-header-btn">KURSGA YOZILISH</button>
+                            <button id="modal-course-btn" class="font-header-btn">KURSGA YOZILISH</button>
                         </div>
                     </form>
                 </div>
@@ -1146,10 +1146,10 @@
     <footer id="footer">
         <div class="footer-in">
             <h1>Aloqa</h1>
-            <form action="#" method="#" class="footer-form row">
-                <input type="text" name="name" placeholder="Ism va familiyangizni yozing">
-                <input type="number" name="phone-number" placeholder="Telefon raqamingizni yozing">
-                <input type="email" name="email" placeholder="Email manzilingizni yozing">
+            <form id="footer-form" action="#" method="GET" class="footer-form row">
+                <input type="text" required name="name" placeholder="Ism va familiyangizni yozing">
+                <input type="number" required name="phone-number" placeholder="Telefon raqamingizni yozing">
+                <input type="email" required name="email" placeholder="Email manzilingizni yozing">
                 <button type="submit" id="footer-submit">YUBORISH</button>
             </form>
             <div class="line-footer"></div>
