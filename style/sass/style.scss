@@ -897,67 +897,72 @@ header{
                 }
             }
         }
-        .item{
-            max-width: 100%;
-            .course-item{
-                padding: 0 15px;
-                .course-main{
-                    background-color: #ECFEFA;
-                    width: 100%;
-                    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.13);
-                    .hidden{
-                        display: none;
-                    }
-                    img{
-                        width: 100%;
+        .owl-stage{
+            display: flex;
+            .item{
+                height: 100%;
+                max-width: 100%;
+                .course-item{
+                    height: 100%;
+                    padding: 0 15px;
+                    .course-main{
                         height: 100%;
-                        object-fit: cover;
-                        cursor: pointer;
-                    }
-                    .course-content{
-                        padding: 0 37px 37px 37px;
-                        h3{
-                            margin: 37px 0 10px 0;
-                            font-style: normal;
-                            font-weight: bold;
-                            font-size: 18px;
-                            line-height: 22px;
-                            letter-spacing: 0.02em;
-                            color: $color-black;
-                            cursor: pointer;
+                        background-color: #ECFEFA;
+                        width: 100%;
+                        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.13);
+                        .hidden{
+                            display: none;
                         }
-                        p{
-                            margin-bottom: 30px;
-                            font-style: normal;
-                            font-weight: normal;
-                            font-size: 14px;
-                            line-height: 120%;
-                            letter-spacing: 0.02em;
-                            color: $color-black;
-                        }
-                        button{
+                        img{
                             width: 100%;
-                            background-color: $color-primary;
-                            padding: 15px 0;
-                            color: $color-white;
-                            font-size: 14px;
-                            font-weight: 700;
-                            letter-spacing: 0.02em;
-                            border: 1px solid $color-primary;
-                            transition: 0.3s;
-                            outline: none;
-                        }
-                        button:hover{
-                            background-color: $color-hover;
-                            color: $color-black;
-                            border: 1px solid #000000;
-                            box-sizing: border-box;
-                            transition: 0.3s;
+                            object-fit: cover;
                             cursor: pointer;
+                        }
+                        .course-content{
+                            padding: 0 37px 37px 37px;
+                            h3{
+                                margin: 37px 0 10px 0;
+                                font-style: normal;
+                                font-weight: bold;
+                                font-size: 18px;
+                                line-height: 22px;
+                                letter-spacing: 0.02em;
+                                color: $color-black;
+                                cursor: pointer;
+                            }
+                            p{
+                                margin-bottom: 30px;
+                                font-style: normal;
+                                font-weight: normal;
+                                font-size: 14px;
+                                line-height: 120%;
+                                letter-spacing: 0.02em;
+                                color: $color-black;
+                            }
+                            button{
+                                width: 100%;
+                                background-color: $color-primary;
+                                padding: 15px 0;
+                                color: $color-white;
+                                font-size: 14px;
+                                font-weight: 700;
+                                letter-spacing: 0.02em;
+                                border: 1px solid $color-primary;
+                                transition: 0.3s;
+                                outline: none;
+                            }
+                            button:hover{
+                                background-color: $color-hover;
+                                color: $color-black;
+                                border: 1px solid #000000;
+                                box-sizing: border-box;
+                                transition: 0.3s;
+                                cursor: pointer;
+                            }
                         }
                     }
                 }
-            }
+            }   
         }
     }
     // modal
@@ -1156,38 +1161,43 @@ header{
                 }
             }
         }
-        .item{
-            max-width: 100%;
-            .teacher-item{
-                padding: 0 15px;
-                .teacher-main{
-                    background-color: #ECFEFA;
-                    width: 100%;
-                    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.13);
-                    img{
-                        width: 100%;
+        .owl-stage{
+            display: flex;
+            .item{
+                max-width: 100%;
+                height: 100%;
+                .teacher-item{
+                    height: 100%;
+                    padding: 0 15px;
+                    .teacher-main{
                         height: 100%;
-                        object-fit: cover;
-                    }
-                    .teacher-content{
-                        padding: 0 37px 37px 37px;
-                        h3{
-                            margin: 37px 0 10px 0;
-                            font-style: normal;
-                            font-weight: bold;
-                            font-size: 18px;
-                            line-height: 22px;
-                            letter-spacing: 0.02em;
-                            color: $color-black;
+                        background-color: #ECFEFA;
+                        width: 100%;
+                        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.13);
+                        img{
+                            width: 100%;
+                            object-fit: cover;
                         }
-                        p{
-                            margin-top: 10px;
-                            font-style: normal;
-                            font-weight: normal;
-                            font-size: 14px;
-                            line-height: 120%;
-                            letter-spacing: 0.02em;
-                            color: $color-black;
+                        .teacher-content{
+                            padding: 0 37px 37px 37px;
+                            h3{
+                                margin: 37px 0 10px 0;
+                                font-style: normal;
+                                font-weight: bold;
+                                font-size: 18px;
+                                line-height: 22px;
+                                letter-spacing: 0.02em;
+                                color: $color-black;
+                            }
+                            p{
+                                margin-top: 10px;
+                                font-style: normal;
+                                font-weight: normal;
+                                font-size: 14px;
+                                line-height: 120%;
+                                letter-spacing: 0.02em;
+                                color: $color-black;
+                            }
                         }
                     }
                 }
@@ -1489,43 +1499,51 @@ header{
                 }
             }
         }
-        .item{
-            padding: 0 15px;
-            width: 100%;
-            .result-item{
-                width: 100%;
-                padding-top: 80px;
-                .result-main{
-                    position: relative;
-                    background: #ECFEFA;
-                    padding: 95px 37px 37px 37px;
-                    box-shadow: 0px 3.55979px 10.6794px rgba(0, 0, 0, 0.13);
-                    img{
-                        position: absolute;
-                        left: 50%;
-                        top: 0;
-                        transform: translateY(-50%) translateX(-50%);
-                        border-radius: 50%;
-                        width: 110px;
-                        height: 110px;
-                    }
-                    h3{
-                        font-style: normal;
-                        font-weight: bold;
-                        font-size: 18px;
-                        line-height: 22px;
-                        color: $color-black;
-                        letter-spacing: 0.02em;
-                    }
-                    p{
-                        margin-top: 10px;
-                        font-family: Montserrat;
-                        font-style: normal;
-                        font-weight: normal;
-                        font-size: 14px;
-                        line-height: 120%;
-                        letter-spacing: 0.02em;
-                        color: $color-black;
+        .owl-stage{
+            display: flex;
+            .owl-item{
+                .item{
+                    padding: 0 15px;
+                    width: 100%;
+                    height: 100%;
+                    .result-item{
+                        height: 100%;
+                        width: 100%;
+                        padding-top: 80px;
+                        .result-main{
+                            height: 100%;
+                            position: relative;
+                            background: #ECFEFA;
+                            padding: 95px 37px 37px 37px;
+                            box-shadow: 0px 3.55979px 10.6794px rgba(0, 0, 0, 0.13);
+                            img{
+                                position: absolute;
+                                left: 50%;
+                                top: 0;
+                                transform: translateY(-50%) translateX(-50%);
+                                border-radius: 50%;
+                                width: 110px;
+                                height: 110px;
+                            }
+                            h3{
+                                font-style: normal;
+                                font-weight: bold;
+                                font-size: 18px;
+                                line-height: 22px;
+                                color: $color-black;
+                                letter-spacing: 0.02em;
+                            }
+                            p{
+                                margin-top: 10px;
+                                font-family: Montserrat;
+                                font-style: normal;
+                                font-weight: normal;
+                                font-size: 14px;
+                                line-height: 120%;
+                                letter-spacing: 0.02em;
+                                color: $color-black;
+                            }
+                        }
                     }
                 }
             }
@@ -1564,50 +1582,57 @@ header{
                 }
             }
         }
-        .item{
-            padding: 30px 15px 5px 15px;
-            .commit-item{
-
-                .commit-main{
-                    background: #ECFEFA;
-                    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.13);
-                    img{
-                        width: 100%;
-                    }
-                    .commit-content{
-                        padding: 37px;
-                        h3{
-                            margin-bottom: 10px;
-                            font-style: normal;
-                            font-weight: bold;
-                            font-size: 18px;
-                            line-height: 22px;
-                            letter-spacing: 0.02em;
-                            color: $color-black;
-                        }
-                        h5{
-                            font-style: normal;
-                            font-weight: normal;
-                            font-size: 14px;
-                            line-height: 120%;
-                            letter-spacing: 0.02em;
-                            color: $color-grey;
-                            margin-bottom: 20px;
-                        }
-                        p{
-                            font-style: normal;
-                            font-weight: normal;
-                            font-size: 14px;
-                            line-height: 120%;
-                            letter-spacing: 0.02em;
-                            color: $color-black;
-                            margin-bottom: 20px;
-                        }
-                        span{
-                            i{
-                                font-size: 14px;
-                                color: #FDB44B;
-                                margin-right: 3.5px;
+        .owl-stage{
+            display: flex;
+            .owl-item{
+                .item{
+                    padding: 30px 15px 5px 15px;
+                    height: 100%;
+                    .commit-item{
+                        height: 100%;
+                        .commit-main{
+                            height: 100%;
+                            background: #ECFEFA;
+                            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.13);
+                            img{
+                                width: 100%;
+                            }
+                            .commit-content{
+                                padding: 37px;
+                                h3{
+                                    margin-bottom: 10px;
+                                    font-style: normal;
+                                    font-weight: bold;
+                                    font-size: 18px;
+                                    line-height: 22px;
+                                    letter-spacing: 0.02em;
+                                    color: $color-black;
+                                }
+                                h5{
+                                    font-style: normal;
+                                    font-weight: normal;
+                                    font-size: 14px;
+                                    line-height: 120%;
+                                    letter-spacing: 0.02em;
+                                    color: $color-grey;
+                                    margin-bottom: 20px;
+                                }
+                                p{
+                                    font-style: normal;
+                                    font-weight: normal;
+                                    font-size: 14px;
+                                    line-height: 120%;
+                                    letter-spacing: 0.02em;
+                                    color: $color-black;
+                                    margin-bottom: 20px;
+                                }
+                                span{
+                                    i{
+                                        font-size: 14px;
+                                        color: #FDB44B;
+                                        margin-right: 3.5px;
+                                    }
+                                }
                             }
                         }
                     }

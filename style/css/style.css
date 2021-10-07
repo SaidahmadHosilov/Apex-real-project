@@ -987,30 +987,35 @@ header .header-content .row .header-content-in .font-header-btn:hover {
 .main #courses-div .owl-dots .owl-dot.active span {
   background-color: #00445B;
 }
-.main #courses-div .item {
+.main #courses-div .owl-stage {
+  display: flex;
+}
+.main #courses-div .owl-stage .item {
+  height: 100%;
   max-width: 100%;
 }
-.main #courses-div .item .course-item {
+.main #courses-div .owl-stage .item .course-item {
+  height: 100%;
   padding: 0 15px;
 }
-.main #courses-div .item .course-item .course-main {
+.main #courses-div .owl-stage .item .course-item .course-main {
+  height: 100%;
   background-color: #ECFEFA;
   width: 100%;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.13);
 }
-.main #courses-div .item .course-item .course-main .hidden {
+.main #courses-div .owl-stage .item .course-item .course-main .hidden {
   display: none;
 }
-.main #courses-div .item .course-item .course-main img {
+.main #courses-div .owl-stage .item .course-item .course-main img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
   cursor: pointer;
 }
-.main #courses-div .item .course-item .course-main .course-content {
+.main #courses-div .owl-stage .item .course-item .course-main .course-content {
   padding: 0 37px 37px 37px;
 }
-.main #courses-div .item .course-item .course-main .course-content h3 {
+.main #courses-div .owl-stage .item .course-item .course-main .course-content h3 {
   margin: 37px 0 10px 0;
   font-style: normal;
   font-weight: bold;
@@ -1020,7 +1025,7 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   color: #000;
   cursor: pointer;
 }
-.main #courses-div .item .course-item .course-main .course-content p {
+.main #courses-div .owl-stage .item .course-item .course-main .course-content p {
   margin-bottom: 30px;
   font-style: normal;
   font-weight: normal;
@@ -1029,7 +1034,7 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   letter-spacing: 0.02em;
   color: #000;
 }
-.main #courses-div .item .course-item .course-main .course-content button {
+.main #courses-div .owl-stage .item .course-item .course-main .course-content button {
   width: 100%;
   background-color: #00445B;
   padding: 15px 0;
@@ -1041,7 +1046,7 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   transition: 0.3s;
   outline: none;
 }
-.main #courses-div .item .course-item .course-main .course-content button:hover {
+.main #courses-div .owl-stage .item .course-item .course-main .course-content button:hover {
   background-color: #ECFEFA;
   color: #000;
   border: 1px solid #000000;
@@ -1235,26 +1240,31 @@ header .header-content .row .header-content-in .font-header-btn:hover {
 .main #teachers-div .owl-dots .owl-dot.active span {
   background-color: #00445B;
 }
-.main #teachers-div .item {
-  max-width: 100%;
+.main #teachers-div .owl-stage {
+  display: flex;
 }
-.main #teachers-div .item .teacher-item {
+.main #teachers-div .owl-stage .item {
+  max-width: 100%;
+  height: 100%;
+}
+.main #teachers-div .owl-stage .item .teacher-item {
+  height: 100%;
   padding: 0 15px;
 }
-.main #teachers-div .item .teacher-item .teacher-main {
+.main #teachers-div .owl-stage .item .teacher-item .teacher-main {
+  height: 100%;
   background-color: #ECFEFA;
   width: 100%;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.13);
 }
-.main #teachers-div .item .teacher-item .teacher-main img {
+.main #teachers-div .owl-stage .item .teacher-item .teacher-main img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
 }
-.main #teachers-div .item .teacher-item .teacher-main .teacher-content {
+.main #teachers-div .owl-stage .item .teacher-item .teacher-main .teacher-content {
   padding: 0 37px 37px 37px;
 }
-.main #teachers-div .item .teacher-item .teacher-main .teacher-content h3 {
+.main #teachers-div .owl-stage .item .teacher-item .teacher-main .teacher-content h3 {
   margin: 37px 0 10px 0;
   font-style: normal;
   font-weight: bold;
@@ -1263,7 +1273,7 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   letter-spacing: 0.02em;
   color: #000;
 }
-.main #teachers-div .item .teacher-item .teacher-main .teacher-content p {
+.main #teachers-div .owl-stage .item .teacher-item .teacher-main .teacher-content p {
   margin-top: 10px;
   font-style: normal;
   font-weight: normal;
@@ -1540,21 +1550,27 @@ header .header-content .row .header-content-in .font-header-btn:hover {
 .main #result-div .owl-dots .owl-dot.active span {
   background-color: #00445B;
 }
-.main #result-div .item {
+.main #result-div .owl-stage {
+  display: flex;
+}
+.main #result-div .owl-stage .owl-item .item {
   padding: 0 15px;
   width: 100%;
+  height: 100%;
 }
-.main #result-div .item .result-item {
+.main #result-div .owl-stage .owl-item .item .result-item {
+  height: 100%;
   width: 100%;
   padding-top: 80px;
 }
-.main #result-div .item .result-item .result-main {
+.main #result-div .owl-stage .owl-item .item .result-item .result-main {
+  height: 100%;
   position: relative;
   background: #ECFEFA;
   padding: 95px 37px 37px 37px;
   box-shadow: 0px 3.55979px 10.6794px rgba(0, 0, 0, 0.13);
 }
-.main #result-div .item .result-item .result-main img {
+.main #result-div .owl-stage .owl-item .item .result-item .result-main img {
   position: absolute;
   left: 50%;
   top: 0;
@@ -1563,7 +1579,7 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   width: 110px;
   height: 110px;
 }
-.main #result-div .item .result-item .result-main h3 {
+.main #result-div .owl-stage .owl-item .item .result-item .result-main h3 {
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
@@ -1571,7 +1587,7 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   color: #000;
   letter-spacing: 0.02em;
 }
-.main #result-div .item .result-item .result-main p {
+.main #result-div .owl-stage .owl-item .item .result-item .result-main p {
   margin-top: 10px;
   font-family: Montserrat;
   font-style: normal;
@@ -1606,20 +1622,28 @@ header .header-content .row .header-content-in .font-header-btn:hover {
 .main #commits-div .owl-dots .owl-dot.active span {
   background-color: #00445B;
 }
-.main #commits-div .item {
-  padding: 30px 15px 5px 15px;
+.main #commits-div .owl-stage {
+  display: flex;
 }
-.main #commits-div .item .commit-item .commit-main {
+.main #commits-div .owl-stage .owl-item .item {
+  padding: 30px 15px 5px 15px;
+  height: 100%;
+}
+.main #commits-div .owl-stage .owl-item .item .commit-item {
+  height: 100%;
+}
+.main #commits-div .owl-stage .owl-item .item .commit-item .commit-main {
+  height: 100%;
   background: #ECFEFA;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.13);
 }
-.main #commits-div .item .commit-item .commit-main img {
+.main #commits-div .owl-stage .owl-item .item .commit-item .commit-main img {
   width: 100%;
 }
-.main #commits-div .item .commit-item .commit-main .commit-content {
+.main #commits-div .owl-stage .owl-item .item .commit-item .commit-main .commit-content {
   padding: 37px;
 }
-.main #commits-div .item .commit-item .commit-main .commit-content h3 {
+.main #commits-div .owl-stage .owl-item .item .commit-item .commit-main .commit-content h3 {
   margin-bottom: 10px;
   font-style: normal;
   font-weight: bold;
@@ -1628,7 +1652,7 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   letter-spacing: 0.02em;
   color: #000;
 }
-.main #commits-div .item .commit-item .commit-main .commit-content h5 {
+.main #commits-div .owl-stage .owl-item .item .commit-item .commit-main .commit-content h5 {
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -1637,7 +1661,7 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   color: #646464;
   margin-bottom: 20px;
 }
-.main #commits-div .item .commit-item .commit-main .commit-content p {
+.main #commits-div .owl-stage .owl-item .item .commit-item .commit-main .commit-content p {
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -1646,7 +1670,7 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   color: #000;
   margin-bottom: 20px;
 }
-.main #commits-div .item .commit-item .commit-main .commit-content span i {
+.main #commits-div .owl-stage .owl-item .item .commit-item .commit-main .commit-content span i {
   font-size: 14px;
   color: #FDB44B;
   margin-right: 3.5px;
