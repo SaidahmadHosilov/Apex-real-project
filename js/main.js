@@ -414,13 +414,13 @@ courseIntroX.addEventListener('click', function(){
 // ******************** YouTube Video Link ********************** \\
 
 let videoIframes = document.querySelectorAll('#videos-div .video-iframe');
+
 for( const ifr of videoIframes ) {
     // quality options: low, medium, high, max | default is max.
-    var thumbnail = get_youtube_thumbnail( ifr.src, 'medium');
+    var thumbnail = get_youtube_thumbnail( ifr.getAttribute('src'), 'medium');
     var img = ifr.parentElement.querySelector('img');
 
     img.src = thumbnail;
-
 }
 
 
@@ -467,11 +467,10 @@ let videoClose = document.getElementById('modal-video-close');
 
 for(const trgVideo of trgVideos){
     trgVideo.addEventListener('click', function(){
-        let ifr = trgVideo.parentElement.querySelector('iframe');
-        let clone = ifr.cloneNode(true);
-        let modalIfr = videoModal.querySelector('.video-container');
+        let ifr = trgVideo.parentElement.querySelector('.video-iframe');
+        let modalIfr = videoModal.querySelector('.video-container iframe');
 
-        modalIfr.appendChild(clone);
+        modalIfr.src = ifr.getAttribute('src');
 
         document.body.style.overflow = 'hidden';
         videoModal.classList.add('video-modal-active');
@@ -482,13 +481,13 @@ for(const trgVideo of trgVideos){
 videoClose.addEventListener('click', function(){
     document.body.style.overflow = 'auto';
     videoModal.classList.remove('video-modal-active');
-    videoModal.querySelector('iframe').remove();
+    document.querySelector('.video-container iframe').setAttribute("src",'')
 })
 
 window.addEventListener('click', function(evt){
     if(evt.target.classList == 'modal-video-main'){
-    videoModal.querySelector('iframe').remove();
-    document.body.style.overflow = 'auto';
+        document.querySelector('.video-container iframe').setAttribute("src",'')
+        document.body.style.overflow = 'auto';
         videoModal.classList.remove('video-modal-active');
     }
 })

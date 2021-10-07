@@ -1437,7 +1437,7 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   color: red;
   transition: 0.3s;
 }
-.main #videos-div .owl-carousel .item .video-item .video-main iframe {
+.main #videos-div .owl-carousel .item .video-item .video-main .video-iframe {
   display: none;
 }
 .main .video-modal.video-modal-active {
