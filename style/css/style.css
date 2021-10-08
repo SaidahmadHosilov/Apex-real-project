@@ -196,12 +196,12 @@ header {
   position: relative;
   min-height: 676px;
   max-width: 1166px;
-  margin: auto;
+  margin: auto auto 83px auto;
 }
 header .header-img-1 {
   position: absolute;
   top: 123px;
-  right: 123px;
+  right: 40px;
   width: 407px;
   height: 578px;
   object-fit: cover;
@@ -212,7 +212,7 @@ header .filter-header {
   width: 284px;
   height: 135px;
   top: 630px;
-  right: 140px;
+  right: 57px;
   background: #cdecff;
   filter: blur(25px);
 }
@@ -236,14 +236,14 @@ header nav .left-header-nav svg {
 header nav .left-header-nav h3 {
   font-size: 25px;
   color: #000;
-  margin-left: 10px;
+  margin-left: 16px;
 }
 header nav .right-header-nav ul {
   list-style: none;
   display: flex;
 }
 header nav .right-header-nav ul li {
-  margin-left: 20px;
+  margin-left: 15px;
 }
 header nav .right-header-nav ul li a {
   font-size: 14px;
@@ -253,6 +253,11 @@ header nav .right-header-nav ul li a {
   color: #000;
   outline: none;
   text-decoration: none;
+}
+@media screen and (max-width: 1050px) {
+  header nav .right-header-nav ul li {
+    margin-left: 20px;
+  }
 }
 header nav .right-header-nav.active-menu {
   height: auto;
@@ -292,12 +297,15 @@ header .header-content .row .header-content-in h1 {
   color: #000;
   font-size: 53px;
   font-weight: 700;
-  letter-spacing: 2%;
+  line-height: 65px;
+  letter-spacing: 0.02em;
 }
 header .header-content .row .header-content-in p {
   margin-bottom: 60px;
   color: #000;
   padding-right: 150px;
+  line-height: 29px;
+  letter-spacing: 0.02em;
 }
 header .header-content .row .header-content-in .font-header-btn:hover {
   background-color: #ECFEFA;
@@ -309,6 +317,10 @@ header .header-content .row .header-content-in .font-header-btn:hover {
 }
 
 @media screen and (max-width: 1200px) {
+  header .header-content .row .header-content-in h1 {
+    padding-right: 160px;
+  }
+
   header nav {
     max-width: 900px;
   }
@@ -362,6 +374,10 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   }
 }
 @media screen and (max-width: 950px) {
+  header .header-content .row .header-content-in h1 {
+    padding-right: 100px;
+  }
+
   header .header-img-1 {
     top: 130px;
     right: 80px;
@@ -450,7 +466,16 @@ header .header-content .row .header-content-in .font-header-btn:hover {
     padding: 18px 35px !important;
   }
 }
+.owl-dots {
+  margin-top: 40px !important;
+}
+
 @media screen and (max-width: 780px) {
+  header .header-content .row .header-content-in h1 {
+    padding-right: 0px;
+    line-height: 1.2;
+  }
+
   header .header-content .row .header-content-in p {
     padding-right: 0;
   }
@@ -1265,7 +1290,7 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   padding: 0 37px 37px 37px;
 }
 .main #teachers-div .owl-stage .item .teacher-item .teacher-main .teacher-content h3 {
-  margin: 37px 0 10px 0;
+  margin: 37px 0 20px 0;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
@@ -1599,7 +1624,7 @@ header .header-content .row .header-content-in .font-header-btn:hover {
 }
 .main #commits-div h1 {
   margin-left: 15px;
-  margin-top: 150px;
+  margin-top: 68px;
   color: #00445B;
   font-style: normal;
   font-weight: bold;
@@ -1707,46 +1732,99 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   object-fit: cover;
 }
 .main #address-div .map-contact-icons {
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   display: flex;
   margin-top: 30px;
-  justify-content: space-between;
   align-items: center;
   padding-left: 15px;
 }
-.main #address-div .map-contact-icons .map-element-box, .main #address-div .map-contact-icons .latest-div-icons {
-  display: flex;
-  align-items: center;
-  padding-right: 13px;
-  justify-content: start;
-  width: 25%;
+.main #address-div .map-contact-icons .box-1 {
+  max-width: 280px;
+  position: relative;
 }
-.main #address-div .map-contact-icons .map-element-box a, .main #address-div .map-contact-icons .latest-div-icons a {
-  text-decoration: none;
-  color: #000;
+.main #address-div .map-contact-icons .box-1 a {
+  position: absolute;
+  top: 3px;
+  left: 0;
 }
-.main #address-div .map-contact-icons .map-element-box svg, .main #address-div .map-contact-icons .latest-div-icons svg {
-  margin-right: 7px;
-  cursor: pointer;
+.main #address-div .map-contact-icons .box-1 a svg {
+  max-width: 24px;
+  max-height: 24px;
 }
-.main #address-div .map-contact-icons .map-element-box span, .main #address-div .map-contact-icons .latest-div-icons span {
-  margin: 0;
+.main #address-div .map-contact-icons .box-1 p {
+  padding-left: 34px;
+  font-style: normal;
+  font-weight: normal;
   font-size: 14px;
-  font-style: "Montserrat", sans-serif;
-  letter-spacing: 2%;
+  line-height: 120%;
+  letter-spacing: 0.02em;
+  color: #000000;
 }
-.main #address-div .map-contact-icons .latest-div-icons {
-  padding-left: 13px;
+.main #address-div .map-contact-icons .box-2 {
+  margin-left: 60px;
+  max-width: 162px;
+  position: relative;
 }
-.main #address-div .map-contact-icons .latest-div-icons span {
-  margin-right: 10px;
+.main #address-div .map-contact-icons .box-2 a {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-.main #address-div .map-contact-icons .latest-div-icons .local-icons {
+.main #address-div .map-contact-icons .box-2 a svg {
+  max-width: 24px;
+  max-height: 24px;
+}
+.main #address-div .map-contact-icons .box-2 p {
+  padding-left: 34px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+.main #address-div .map-contact-icons .box-3 {
+  margin-left: 60px;
+  max-width: 188px;
+  position: relative;
+}
+.main #address-div .map-contact-icons .box-3 a {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.main #address-div .map-contact-icons .box-3 a svg {
+  max-width: 24px;
+  max-height: 24px;
+}
+.main #address-div .map-contact-icons .box-3 p {
+  padding-left: 34px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+.main #address-div .map-contact-icons .box-4 {
   display: flex;
-  justify-content: start;
+  max-width: 346px;
+  position: relative;
+  margin-left: 70px;
 }
-.main #address-div .map-contact-icons .latest-div-icons .local-icons svg {
-  margin-right: 5px;
+.main #address-div .map-contact-icons .box-4 p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+.main #address-div .map-contact-icons .box-4 a svg {
+  margin-left: 10px;
+}
+.main #address-div .map-contact-icons .box-4 .first-map-icon {
+  margin-left: 3 !important;
 }
 
 @media screen and (max-width: 1200px) {
@@ -1757,22 +1835,85 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   .main {
     max-width: 900px;
   }
-
-  .main #address-div .map-contact-icons .latest-div-icons {
-    padding-right: 0;
-    display: flex;
-    flex-direction: column;
+  .main #address-div .map-contact-icons .box-1 {
+    max-width: 320px;
   }
-  .main #address-div .map-contact-icons .latest-div-icons .local-map {
-    display: flex;
-    justify-content: center;
-    text-align: center;
+  .main #address-div .map-contact-icons .box-1 a {
+    top: 8px;
+    left: 0;
   }
-  .main #address-div .map-contact-icons .latest-div-icons .local-icons {
+  .main #address-div .map-contact-icons .box-1 p {
+    font-size: 13px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    color: #000000;
+  }
+  .main #address-div .map-contact-icons .box-2 {
+    margin-left: 15px;
+    max-width: 200px;
+    position: relative;
+  }
+  .main #address-div .map-contact-icons .box-2 a {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .main #address-div .map-contact-icons .box-2 a svg {
+    max-width: 24px;
+    max-height: 24px;
+  }
+  .main #address-div .map-contact-icons .box-2 p {
+    padding-left: 34px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    color: #000000;
+  }
+  .main #address-div .map-contact-icons .box-3 {
+    margin-left: 15px;
+    max-width: 188px;
+    position: relative;
+  }
+  .main #address-div .map-contact-icons .box-3 a {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .main #address-div .map-contact-icons .box-3 a svg {
+    max-width: 24px;
+    max-height: 24px;
+  }
+  .main #address-div .map-contact-icons .box-3 p {
+    padding-left: 34px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    color: #000000;
+  }
+  .main #address-div .map-contact-icons .box-4 {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px 0;
+    justify-content: end;
+    max-width: 346px;
+    position: relative;
+    margin-left: 40px;
+  }
+  .main #address-div .map-contact-icons .box-4 p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    color: #000000;
+  }
+  .main #address-div .map-contact-icons .box-4 a svg {
+    margin-left: 10px;
+  }
+  .main #address-div .map-contact-icons .box-4 .first-map-icon {
+    margin-left: 3 !important;
   }
 }
 @media screen and (max-width: 1100px) {
@@ -1819,13 +1960,137 @@ header .header-content .row .header-content-in .font-header-btn:hover {
     margin: 5px 0;
   }
 
-  .main #address-div .map-contact-icons .latest-div-icons {
-    flex-direction: row;
-    padding-left: 0;
+  .main {
+    max-width: 900px;
   }
-  .main #address-div .map-contact-icons .latest-div-icons .local-map {
-    width: 150px;
-    text-align: left;
+  .main #address-div .map-contact-icons {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .main #address-div .map-contact-icons .box-1 {
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+    max-width: 100%;
+  }
+  .main #address-div .map-contact-icons .box-1 a {
+    top: -4px;
+    left: 0;
+  }
+  .main #address-div .map-contact-icons .box-1 p {
+    font-size: 13px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    color: #000000;
+  }
+  .main #address-div .map-contact-icons .box-2 {
+    display: flex;
+    justify-content: start;
+    padding-bottom: 15px;
+    max-width: 100%;
+    margin-left: 0;
+    align-items: center;
+    position: relative;
+  }
+  .main #address-div .map-contact-icons .box-2 a {
+    position: absolute;
+    top: -4px;
+    left: 3px;
+  }
+  .main #address-div .map-contact-icons .box-2 a svg {
+    max-width: 24px;
+    max-height: 24px;
+  }
+  .main #address-div .map-contact-icons .box-2 p {
+    padding-left: 34px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    color: #000000;
+  }
+  .main #address-div .map-contact-icons .box-3 {
+    padding-bottom: 15px;
+    max-width: 100%;
+    display: flex;
+    margin-left: 0;
+    align-items: center;
+    justify-content: start;
+  }
+  .main #address-div .map-contact-icons .box-3 a {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .main #address-div .map-contact-icons .box-3 a svg {
+    max-width: 24px;
+    max-height: 24px;
+  }
+  .main #address-div .map-contact-icons .box-3 p {
+    padding-left: 34px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    color: #000000;
+  }
+  .main #address-div .map-contact-icons .box-4 {
+    margin-left: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  .main #address-div .map-contact-icons .box-4 p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    color: #000000;
+  }
+  .main #address-div .map-contact-icons .box-4 a svg {
+    margin-left: 20px;
+  }
+  .main #address-div .map-contact-icons .box-4 .first-map-icon {
+    margin-left: 10 !important;
+  }
+}
+@media screen and (max-width: 478px) {
+  .main {
+    max-width: 900px;
+  }
+  .main #address-div .map-contact-icons {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .main #address-div .map-contact-icons .box-1 a {
+    top: 2px;
+    left: 0;
+  }
+}
+@media screen and (max-width: 390px) {
+  .main {
+    max-width: 900px;
+  }
+  .main #address-div .map-contact-icons .box-4 a svg {
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width: 364px) {
+  .main {
+    max-width: 900px;
+  }
+  .main #address-div .map-contact-icons .box-4 a svg {
+    margin-left: 5px;
   }
 }
 @media screen and (max-width: 700px) {
@@ -1862,34 +2127,6 @@ header .header-content .row .header-content-in .font-header-btn:hover {
 
   .main #address-div h1 {
     margin-top: 50px;
-  }
-
-  .main #address-div .map-contact-icons .map-element-box, .main #address-div .map-contact-icons .latest-div-icons {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  .main #address-div .map-contact-icons .map-element-box .local-map, .main #address-div .map-contact-icons .latest-div-icons .local-map {
-    display: flex;
-    justify-content: start;
-    text-align: center;
-  }
-  .main #address-div .map-contact-icons .map-element-box .local-icons, .main #address-div .map-contact-icons .latest-div-icons .local-icons {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    margin: 5px 0;
-  }
-
-  .main #address-div .map-contact-icons .latest-div-icons {
-    flex-direction: row;
-    padding-left: 0;
-  }
-  .main #address-div .map-contact-icons .latest-div-icons .local-map {
-    width: auto;
-    justify-content: start;
-  }
-  .main #address-div .map-contact-icons .latest-div-icons svg {
-    margin-right: 10px;
   }
 }
 @media screen and (max-width: 375px) {
