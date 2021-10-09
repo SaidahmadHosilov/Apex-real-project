@@ -179,6 +179,22 @@
   letter-spacing: 2%;
 }
 
+::placeholder {
+  color: rgba(100, 100, 100, 0.5);
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgba(100, 100, 100, 0.5);
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: rgba(100, 100, 100, 0.5);
+}
+
 * {
   font-family: "Montserrat", sans-serif;
   margin: 0;
@@ -243,7 +259,7 @@ header nav .right-header-nav ul {
   display: flex;
 }
 header nav .right-header-nav ul li {
-  margin-left: 15px;
+  margin-left: 30px;
 }
 header nav .right-header-nav ul li a {
   font-size: 14px;
@@ -572,7 +588,7 @@ header .header-content .row .header-content-in .font-header-btn:hover {
 }
 .modal-course .modal-in .modal-c {
   z-index: 1;
-  height: 687px;
+  min-height: 687px;
   width: 657px;
   border-radius: 0;
   background: #ECFEFA;
@@ -619,27 +635,60 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   color: #000;
 }
 .modal-course .modal-in .modal-c .modal-c-body .course-form {
-  padding: 0 100px 50px 100px;
+  padding: 0 100px 0px 100px;
 }
-.modal-course .modal-in .modal-c .modal-c-body .course-form input {
+.modal-course .modal-in .modal-c .modal-c-body .course-form div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+  margin-bottom: 40px;
+  width: 100%;
+}
+.modal-course .modal-in .modal-c .modal-c-body .course-form div input {
   padding: 22px;
+  padding-right: 30px;
   background: #fff;
   border: 0.5px solid #646464;
   box-sizing: border-box;
   width: 100%;
-  margin-bottom: 40px;
   outline: none;
 }
-.modal-course .modal-in .modal-c .modal-c-body .course-form div {
+.modal-course .modal-in .modal-c .modal-c-body .course-form div .fa-exclamation-circle {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  color: red;
+  display: none;
+  font-size: 18px;
+}
+.modal-course .modal-in .modal-c .modal-c-body .course-form div .fa-check {
+  font-size: 18px;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  display: none;
+  color: lime;
+}
+.modal-course .modal-in .modal-c .modal-c-body .course-form div p {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  font-size: 12px;
+  line-height: 14px;
+  color: red;
+  display: none;
+}
+.modal-course .modal-in .modal-c .modal-c-body .course-form .course-inc-btn {
   display: flex;
   justify-content: end;
-  margin-top: 40px;
+  margin-top: 80px;
 }
-.modal-course .modal-in .modal-c .modal-c-body .course-form div button {
+.modal-course .modal-in .modal-c .modal-c-body .course-form .course-inc-btn button {
   border: none;
   outline: none;
 }
-.modal-course .modal-in .modal-c .modal-c-body .course-form div button:hover {
+.modal-course .modal-in .modal-c .modal-c-body .course-form .course-inc-btn button:hover {
   background-color: #ECFEFA;
   color: #000;
   border: 1px solid #000;
@@ -665,20 +714,23 @@ header .header-content .row .header-content-in .font-header-btn:hover {
     padding: 10px;
   }
   .modal-course .modal-in .modal-c {
-    height: 630px;
+    min-height: 300px;
   }
   .modal-course .modal-in .modal-c-body h1 {
     padding: 0 20px;
     margin: 30px 0 50px 0 !important;
   }
   .modal-course .modal-in .modal-c-body .course-form {
-    padding: 0 30px 30px 20px !important;
-  }
-  .modal-course .modal-in .modal-c-body .course-form input {
-    padding-left: 15px !important;
+    padding: 0 30px 0px 20px !important;
   }
   .modal-course .modal-in .modal-c-body .course-form div {
-    margin-top: 0 !important;
+    margin-bottom: 50px !important;
+  }
+  .modal-course .modal-in .modal-c-body .course-form div input {
+    padding-left: 15px !important;
+  }
+  .modal-course .modal-in .modal-c-body .course-form .course-inc-btn {
+    margin-top: 60px !important;
   }
 }
 .modal-course-submit.modal-submit-active {
@@ -790,6 +842,7 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   background-color: #00445B;
 }
 .main #news-div .owl-carousel .item {
+  padding: 0 15px;
   max-width: 100%;
   max-height: auto;
 }
@@ -799,7 +852,7 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   cursor: pointer;
 }
 .main #news-div .owl-carousel .item .news-content {
-  padding: 10px 12px;
+  padding: 20px 0px 10px 0;
 }
 .main #news-div .owl-carousel .item .news-content h3 {
   font-style: normal;
@@ -1331,6 +1384,7 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   width: 33.33333%;
   display: flex;
   justify-content: center;
+  padding: 15px;
 }
 .main #photos-div .photos .photo-item .item {
   width: 100%;
@@ -1781,6 +1835,10 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   font-size: 14px;
   line-height: 120%;
   letter-spacing: 0.02em;
+}
+.main #address-div .map-contact-icons .box-2 p a {
+  position: relative;
+  text-decoration: none;
   color: #000000;
 }
 .main #address-div .map-contact-icons .box-3 {
@@ -1805,6 +1863,11 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   line-height: 120%;
   letter-spacing: 0.02em;
   color: #000000;
+}
+.main #address-div .map-contact-icons .box-3 p a {
+  position: relative;
+  color: #000;
+  text-decoration: none;
 }
 .main #address-div .map-contact-icons .box-4 {
   display: flex;
@@ -1934,15 +1997,8 @@ header .header-content .row .header-content-in .font-header-btn:hover {
     width: 20px;
     border-radius: 0;
   }
-  .main #news-div .owl-carousel .item .news-content {
-    padding: 10px 30px;
-  }
   .main #photos-div .photos .photo-item {
     width: 50%;
-  }
-
-  .main #news-div .owl-carousel .item .news-content {
-    padding: 0 10px 0 12px;
   }
 
   .main #address-div .map-contact-icons .map-element-box, .main #address-div .map-contact-icons .latest-div-icons {
@@ -2110,7 +2166,7 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   }
 
   .main #news-div .owl-carousel .item .news-content {
-    padding: 0 10px 0 20px;
+    padding: 20px 0px 10px 0px;
   }
 
   .main #videos-div h1 {
@@ -2157,21 +2213,51 @@ footer .footer-in h1 {
 }
 footer .footer-in .footer-form {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
-footer .footer-in .footer-form input {
+footer .footer-in .footer-form div {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-right: 30px;
   width: 100%;
-  padding: 15px;
+}
+footer .footer-in .footer-form div input {
+  width: 100%;
+  padding: 15px 30px 15px 15px;
   font-size: 14px;
   color: #646464;
   background-color: #ECFEFA;
   border: none;
-  margin-right: 30px;
   font-style: normal;
   font-weight: normal;
   line-height: 17px;
   letter-spacing: 0.02em;
-  color: rgba(100, 100, 100, 0.5);
+  outline: none;
+}
+footer .footer-in .footer-form div .fa-exclamation-circle {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  color: red;
+  display: none;
+  font-size: 18px;
+}
+footer .footer-in .footer-form div .fa-check {
+  font-size: 18px;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  display: none;
+  color: lime;
+}
+footer .footer-in .footer-form div p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  line-height: 14px;
+  color: red;
+  display: none;
 }
 footer .footer-in .footer-form button {
   text-decoration: none;
@@ -2265,7 +2351,7 @@ footer .footer-in .footer-down .copyright-footer p {
   footer .footer-in {
     width: 90%;
   }
-  footer .footer-in .footer-form input {
+  footer .footer-in .footer-form div input {
     font-size: 12px;
   }
 }
@@ -2276,7 +2362,6 @@ footer .footer-in .footer-down .copyright-footer p {
   }
   footer .footer-in .footer-form {
     display: flex;
-    align-items: center;
   }
   footer .footer-in .footer-form div {
     display: flex;
@@ -2323,12 +2408,18 @@ footer .footer-in .footer-down .copyright-footer p {
   }
   footer .footer-in .footer-form div {
     width: 100%;
+    margin-right: 0;
+    position: relative;
+    align-items: flex-start;
   }
-  footer .footer-in .footer-form input {
+  footer .footer-in .footer-form div input {
     padding: 10px;
     width: 100%;
     margin-bottom: 5px;
     margin-right: 0;
+  }
+  footer .footer-in .footer-form div i {
+    top: 10px !important;
   }
   footer .footer-in .footer-form button {
     margin-top: 20px;

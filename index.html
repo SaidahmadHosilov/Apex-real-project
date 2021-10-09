@@ -81,9 +81,19 @@
                 <div class="modal-c-body">
                     <h1>Kursga yozilish</h1>
                     <form class="course-form" action="#" method="POST">
-                        <input type="text" required name="name" placeholder="Ism va familiyangizni yozing">
-                        <input type="number" required name="phone-number" placeholder="Telefon raqamingizni yozing">
                         <div>
+                            <input class="header-name" type="text" required name="name" placeholder="Ism va familiyangizni yozing">
+                            <i class="fas fa-exclamation-circle name-error"></i>
+                            <i class="fas fa-check name-success"></i>
+                            <p class="header-name-error">3 tadan kam bo'lmagan va 30 tadan ko'p bo'lmagan, lotin harflaridan iborat bo'lishi kerak</p>
+                        </div>
+                        <div>
+                            <input class="header-tel" id="phone" type="tel" required name="phone-number" placeholder="Telefon raqamingizni yozing">
+                            <i class="fas fa-exclamation-circle tel-error"></i>
+                            <i class="fas fa-check tel-success"></i>
+                            <p class="header-tel-error">Telefon raqamni to'g'ri formatda kiritish kerak</p>
+                        </div>
+                        <div class="course-inc-btn">
                             <button id="modal-course-btn" class="font-header-btn">KURSGA YOZILISH</button>
                         </div>
                     </form>
@@ -1096,7 +1106,7 @@
                             <path d="M15.5754 16.8165L12.5731 14.9867C12.4467 14.9043 12.2962 14.8575 12.137 14.8512C11.9779 14.8448 11.816 14.8791 11.6679 14.9505L10.4524 15.5754C10.3 15.6516 10.1315 15.6858 9.9675 15.6739C9.80353 15.662 9.65123 15.6044 9.52927 15.5083C7.38988 13.8647 6.0183 11.489 5.66458 8.81443C5.64231 8.66075 5.66862 8.50008 5.74028 8.35212C5.81194 8.20416 5.92585 8.07534 6.06802 7.98146L7.18541 7.18667C7.32351 7.09688 7.43713 6.97584 7.51456 6.83603C7.59199 6.69623 7.63042 6.54273 7.62587 6.39137L7.54239 2.87638L7.52796 1.97572C7.52379 1.8462 7.4886 1.72195 7.42502 1.61224C7.32317 1.43413 7.15101 1.30484 6.9423 1.2497C6.36706 1.09161 5.74749 1.07 5.13506 1.18668C4.52262 1.30337 3.93502 1.55497 3.42105 1.92058L3.16969 2.1069L3.03945 2.20407C2.97894 2.24679 2.92062 2.29237 2.86475 2.34063L2.70295 2.48897C0.565905 4.47799 0.725289 9.23026 3.13929 13.848L3.87953 15.1301C6.668 19.5233 10.7039 22.0375 13.5054 21.2206L13.7148 21.1546C13.7841 21.1305 13.8524 21.103 13.9192 21.0723L14.0691 21.0091L14.3562 20.8845C14.9295 20.622 15.4409 20.2388 15.8478 19.7667C16.2548 19.2946 16.5456 18.7473 16.696 18.1701C16.7526 17.9618 16.7267 17.7481 16.6234 17.5708C16.5602 17.4609 16.4702 17.3683 16.3601 17.2999L15.5754 16.8165Z" stroke="#00445B" stroke-width="1.06794" stroke-miterlimit="10"/>
                         </svg>
                     </a>
-                    <p>+998 90 350 55 55</p>
+                    <p><a href="#">+998 90 350 55 55</a></p>
                 </div>
                 <div class="box-3">
                     <a href="#">
@@ -1104,7 +1114,7 @@
                             <path d="M22.1519 0.00244141H1.8481C0.83038 0.00244141 0 0.832821 0 1.85054V16.1493C0 17.167 0.83038 17.9974 1.8481 17.9974H22.1519C23.1696 17.9974 24 17.167 24 16.1493V1.85054C24 0.832821 23.1696 0.00244141 22.1519 0.00244141ZM21.8835 1.36953L12.1266 9.71383L2.36962 1.36953H21.8835ZM22.6329 16.1493C22.6329 16.4126 22.4152 16.6303 22.1519 16.6303H1.8481C1.58481 16.6303 1.36709 16.4126 1.36709 16.1493V2.3113L11.681 11.1316C11.6861 11.1366 11.6962 11.1417 11.7013 11.1467C11.7063 11.1518 11.7165 11.1569 11.7215 11.1619C11.7367 11.1721 11.7468 11.1822 11.762 11.1873C11.7671 11.1923 11.7722 11.1923 11.7772 11.1974C11.7975 11.2075 11.8177 11.2176 11.838 11.2278C11.843 11.2278 11.8481 11.2328 11.8532 11.2328C11.8684 11.2379 11.8835 11.248 11.9038 11.2531C11.9089 11.2531 11.919 11.2581 11.9241 11.2581C11.9392 11.2632 11.9544 11.2683 11.9696 11.2683C11.9747 11.2683 11.9848 11.2733 11.9899 11.2733C12.0051 11.2784 12.0253 11.2784 12.0405 11.2835C12.0456 11.2835 12.0506 11.2835 12.0557 11.2835C12.0759 11.2835 12.1013 11.2885 12.1215 11.2885C12.1418 11.2885 12.1671 11.2885 12.1873 11.2835C12.1924 11.2835 12.1975 11.2835 12.2025 11.2835C12.2177 11.2835 12.238 11.2784 12.2532 11.2733C12.2582 11.2733 12.2684 11.2683 12.2734 11.2683C12.2886 11.2632 12.3038 11.2581 12.319 11.2581C12.3241 11.2581 12.3342 11.2531 12.3392 11.2531C12.3544 11.248 12.3696 11.2429 12.3899 11.2328C12.3949 11.2328 12.4 11.2278 12.4051 11.2278C12.4253 11.2176 12.4456 11.2075 12.4658 11.1974C12.4709 11.1923 12.4759 11.1923 12.481 11.1873C12.4962 11.1771 12.5063 11.1721 12.5215 11.1619C12.5266 11.1569 12.5367 11.1518 12.5418 11.1467C12.5468 11.1417 12.557 11.1366 12.562 11.1316L22.6329 2.52902V16.1493Z" fill="#00445B"/>
                         </svg>
                     </a>
-                    <p>apexedu@gmail.com</p>
+                    <p><a href="#">apexedu@gmail.com</a></p>
                 </div>
                 <div class="box-4">
                     <p>Ijtimoiy tarmoqdagi sahifalarimiz:</p>
@@ -1137,9 +1147,24 @@
         <div class="footer-in">
             <h1>Aloqa</h1>
             <form id="footer-form" action="#" method="GET" class="footer-form row">
-                <input type="text" required name="name" placeholder="Ism va familiyangizni yozing">
-                <input type="number" required name="phone-number" placeholder="Telefon raqamingizni yozing">
-                <input type="email" required name="email" placeholder="Email manzilingizni yozing">
+                <div>
+                    <input class="footer-name" type="text" required name="name" placeholder="Ism va familiyangizni yozing">
+                    <i class="fas fa-exclamation-circle name-error"></i>
+                    <i class="fas fa-check name-success"></i>
+                    <p class="ftr-name-error">3 tadan kam bo'lmagan va 30 tadan ko'p bo'lmagan, lotin harflaridan iborat bo'lishi kerak</p>
+                </div>
+                <div>
+                    <input class="footer-tel" id="phone" type="tel" required name="phone-number" placeholder="Telefon raqamingizni yozing">
+                    <i class="fas fa-exclamation-circle tel-error"></i>
+                    <i class="fas fa-check tel-success"></i>
+                    <p class="ftr-tel-error">Telefon raqamni to'g'ri formatda kiritish kerak</p>
+                </div>
+                <div>
+                    <input class="footer-email" type="email" required name="email" placeholder="Email manzilingizni yozing">
+                    <i class="fas fa-exclamation-circle email-error"></i>
+                    <i class="fas fa-check email-success"></i>
+                    <p class="ftr-email-error">Elektron pochtangizni to'g'ri kiriting</p>
+                </div>
                 <button type="submit" id="footer-submit">YUBORISH</button>
             </form>
             <div class="line-footer"></div>
@@ -1164,8 +1189,21 @@
         </div>
     </footer>
 
+
     <!-- *|*|*|*|*|*|*|*|* Footer End *|*|*|*|*|*|*|*|* -->
-   
+
+
+    <!-- ******************* Masks ******************* -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/jquery.maskedinput.js"></script>
+    <script>
+        $(document).ready(function($){
+            $.mask.definitions['9'] = '';
+            $.mask.definitions['x'] = '[0-9]';
+            $("#phone").mask("+998 (xx) xxx-xx-xx");
+        })
+    </script>
+    <!-- ******************* Masks ******************* -->
     <!-- Owl Carousel Js file -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>

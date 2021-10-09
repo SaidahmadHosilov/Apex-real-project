@@ -81,14 +81,66 @@ window.addEventListener('click', function(event){
 let closeSubmitBtn = document.querySelector('#close-submit-btn');
 let modalSubmit = document.querySelector('.modal-course-submit');
 
-showModalCourse.addEventListener('click', function(e){
-    let count = 0;
-    let inputs = showModalCourse.parentElement.parentElement.querySelectorAll('input');
-    for(const npt of inputs){
-        if(npt.value == '') count += 1;
+let hdrName = document.querySelector('.header-name');
+var hdrErrorMsgName = document.querySelector('.header-name-error');
+hdrName.addEventListener('keyup', function(){
+    var success = document.querySelector('.name-success');
+    var error = document.querySelector('.name-error');
+
+    if( hdrName.value.length >= 3 && hdrName.value.length < 30 && hdrName.value.match(/[-!$%^&*()_+|~=`{}\[\]:";<> \\?,.\/0-9]/) == null ){
+
+        error.style.display = 'none';
+        success.style.display = 'block';
+        hdrName.style.outline = '1px solid green';
+        hdrErrorMsgName.style.display = 'none';
+    } else {
+        success.style.display = 'none';
+        error.style.display = 'block';
+        hdrName.style.outline = '1px solid red';
+        hdrErrorMsgName.style.display = 'block';
     }
-    if(count == 0) {
+})
+
+let hdrTel = document.querySelector('.header-tel');
+var hdrErrorMsgTel = document.querySelector('.header-tel-error');
+hdrTel.addEventListener('keyup', function(){
+    var success = document.querySelector('.tel-success');
+    var error = document.querySelector('.tel-error');
+
+    if( hdrTel.value.match(/[0-9]/gi).length == 12 ){
+
+        error.style.display = 'none';
+        success.style.display = 'block';
+        hdrTel.style.outline = '1px solid green';
+        hdrErrorMsgTel.style.display = 'none';
+    } else {
+        success.style.display = 'none';
+        error.style.display = 'block';
+        hdrTel.style.outline = '1px solid red';
+        hdrErrorMsgTel.style.display = 'block';
+    }
+})
+
+showModalCourse.addEventListener('click', function(e){
+    let inputs = modalCourse.querySelectorAll('input');
+    let count = 0;
+    for(const npt of inputs){
+        if(npt.value == '') {
+            count += 1;
+            npt.parentElement.querySelectorAll('i')[0].style.display = 'block';
+            npt.style.outline = '1px solid red';
+            npt.parentElement.querySelector('p').style.display = 'block';
+        }
+    }
+
+    for( const err of modalCourse.querySelectorAll('.fa-exclamation-circle') ){
+        if(err.style.display == 'block') count += 1
+    }
+    if(count != 0){
         e.preventDefault();
+    }
+
+    if(count == 0){
         let coverModalBg = document.createElement('div');
         coverModalBg.classList.add('cover-body-modal');
         document.querySelector('.modal-in-submit').append(coverModalBg);
@@ -98,7 +150,37 @@ showModalCourse.addEventListener('click', function(e){
     
         document.querySelector('.modal-course .modal-in')
         .removeChild(document.querySelector('.modal-course .cover-body-modal'));
+        
+        for(const npt of inputs){
+            npt.value = '';
+            npt.parentElement.querySelectorAll('i')[0].style.display = 'none';
+            npt.parentElement.querySelectorAll('i')[1].style.display = 'none';
+            npt.style.outline = '0px solid red';
+            npt.parentElement.querySelector('p').style.display = 'none';
+        }
+
+        hdrErrorMsgName.style.display = 'none';
+        hdrErrorMsgTel.style.display = 'none';
+        e.preventDefault();
     }
+
+    // let count = 0;
+    // let inputs = showModalCourse.parentElement.parentElement.querySelectorAll('input');
+    // for(const npt of inputs){
+    //     if(npt.value == '') count += 1;
+    // }
+    // if(count == 0) {
+    //     e.preventDefault();
+    //     let coverModalBg = document.createElement('div');
+    //     coverModalBg.classList.add('cover-body-modal');
+    //     document.querySelector('.modal-in-submit').append(coverModalBg);
+    
+    //     modalCourse.classList.remove('modal-course-active');
+    //     modalSubmit.classList.add('modal-submit-active');
+    
+    //     document.querySelector('.modal-course .modal-in')
+    //     .removeChild(document.querySelector('.modal-course .cover-body-modal'));
+    // }
 })
 
 closeSubmitBtn.addEventListener('click', function(){
@@ -155,30 +237,89 @@ window.addEventListener('click', function(evt){
 
 /* Modal-courses end */
 
-// Footer modal
+// Footer form
+let ftrName = document.querySelector('.footer-name');
+var errorMsgName = document.querySelector('.ftr-name-error');
+ftrName.addEventListener('keyup', function(){
+    var success = ftrForm.querySelector('.name-success');
+    var error = ftrForm.querySelector('.name-error');
+
+    if( ftrName.value.length >= 3 && ftrName.value.length < 30 && ftrName.value.match(/[-!$%^&*()_+|~=`{}\[\]:";<> \\?,.\/0-9]/) == null ){
+
+        error.style.display = 'none';
+        success.style.display = 'block';
+        ftrName.style.outline = '1px solid green';
+        errorMsgName.style.display = 'none';
+    } else {
+        success.style.display = 'none';
+        error.style.display = 'block';
+        ftrName.style.outline = '1px solid red';
+        errorMsgName.style.display = 'block';
+    }
+})
+
+let ftrTel = document.querySelector('.footer-tel');
+var errorMsgTel = document.querySelector('.ftr-tel-error');
+ftrTel.addEventListener('keyup', function(){
+    var success = ftrForm.querySelector('.tel-success');
+    var error = ftrForm.querySelector('.tel-error');
+
+    if( ftrTel.value.match(/[0-9]/gi).length == 12 ){
+
+        error.style.display = 'none';
+        success.style.display = 'block';
+        ftrTel.style.outline = '1px solid green';
+        errorMsgTel.style.display = 'none';
+    } else {
+        success.style.display = 'none';
+        error.style.display = 'block';
+        ftrTel.style.outline = '1px solid red';
+        errorMsgTel.style.display = 'block';
+    }
+})
+
+let ftrEmail = document.querySelector('.footer-email');
+var errorMsgEmail = document.querySelector('.ftr-email-error');
+ftrEmail.addEventListener('keyup', function(){
+    var success = ftrForm.querySelector('.email-success');
+    var error = ftrForm.querySelector('.email-error');
+    let regExp = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    
+    if( ftrEmail.value.match(regExp)){
+        
+        error.style.display = 'none';
+        success.style.display = 'block';
+        ftrEmail.style.outline = '1px solid green';
+        errorMsgEmail.style.display = 'none';
+    } else {
+
+        success.style.display = 'none';
+        error.style.display = 'block';
+        ftrEmail.style.outline = '1px solid red';
+        errorMsgEmail.style.display = 'block';
+    }
+})
+
 let ftrBtn = document.querySelector('#footer-submit');
 let ftrForm = document.getElementById('footer-form');
-
-// ftrForm.noValidate = true;
-
-// ftrForm.addEventListener('submit', function handleFormSubmit(event) {
-//     const isValid = form.reportValidity();
-  
-//     if (isValid) {
-//       // POST form data to backend with fetch
-//     }
-
-    
-//     event.preventDefault();
-// });
 
 ftrBtn.addEventListener('click', function(e){
     let inputs = ftrForm.querySelectorAll('input');
     let count = 0;
     for(const npt of inputs){
-        if(npt.value == '') count += 1;
+        if(npt.value == '') {
+            count += 1;
+            npt.parentElement.querySelectorAll('i')[0].style.display = 'block';
+            npt.style.outline = '1px solid red';
+            npt.parentElement.querySelector('p').style.display = 'block';
+        }
     }
-
+    for( const err of ftrForm.querySelectorAll('.fa-exclamation-circle') ){
+        if(err.style.display == 'block') count += 1
+    }
+    if(count != 0){
+        e.preventDefault();
+    }
     if(count == 0){
         let coverModalBg = document.createElement('div');
         coverModalBg.classList.add('cover-body-modal');
@@ -186,10 +327,61 @@ ftrBtn.addEventListener('click', function(e){
 
         modalCourse.classList.remove('modal-course-active');
         modalSubmit.classList.add('modal-submit-active');
+        
+        for(const npt of inputs){
+            npt.value = '';
+            npt.parentElement.querySelectorAll('i')[0].style.display = 'none';
+            npt.parentElement.querySelectorAll('i')[1].style.display = 'none';
+            npt.style.outline = '0px solid red';
+            npt.parentElement.querySelector('p').style.display = 'none';
+        }
+
+        errorMsgName.style.display = 'none';
+        errorMsgEmail.style.display = 'none';
+        errorMsgTel.style.display = 'none';
         e.preventDefault();
     }
 })
-// Footer modal
+
+
+// let ftrBtn = document.querySelector('#footer-submit');
+// let ftrForm = document.getElementById('footer-form');
+
+// ftrBtn.addEventListener('click', function(e){
+//     let inputs = ftrForm.querySelectorAll('input');
+//     let count = 0;
+//     for(const npt of inputs){
+//         if(npt.value == '') {
+//             count += 1;
+//             npt.parentElement.querySelectorAll('i')[0].style.display = 'block';
+//             npt.style.outline = '1px solid red';
+//             npt.parentElement.querySelector('p').style.display = 'block';
+//         }
+//     }
+
+//     if(count == 0){
+//         let coverModalBg = document.createElement('div');
+//         coverModalBg.classList.add('cover-body-modal');
+//         document.querySelector('.modal-in-submit').append(coverModalBg);
+
+//         modalCourse.classList.remove('modal-course-active');
+//         modalSubmit.classList.add('modal-submit-active');
+        
+//         for(const npt of inputs){
+//             npt.value = '';
+//             npt.parentElement.querySelectorAll('i')[1].style.display = 'none';
+//             npt.style.outline = '0px solid red';
+//             npt.parentElement.querySelector('p').style.display = 'none';
+//         }
+
+//         errorMsgName.style.display = 'none';
+//         errorMsgEmail.style.display = 'none';
+//         errorMsgTel.style.display = 'none';
+//         e.preventDefault();
+//     }
+// })
+
+// Footer form
 
 /* -- owl carousel -- */
 

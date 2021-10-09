@@ -6,6 +6,18 @@
 @import "./include/color.scss";
 @import "./include/typography.scss";
 
+::placeholder {
+    color: rgba(100, 100, 100, 0.5);
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: rgba(100, 100, 100, 0.5);
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+   color: rgba(100, 100, 100, 0.5);
+  }
 *{
     font-family: $font-montserrat;
     margin: 0;
@@ -66,7 +78,7 @@ header{
                 list-style: none;
                 display: flex;
                 li{
-                    margin-left: 15px;
+                    margin-left: 30px;
                     a{
                         font-size: 14px;
                         font-family: $font-montserrat;
@@ -421,7 +433,7 @@ header{
         padding: 50px;
         .modal-c{
             z-index: 1;
-            height: 687px;
+            min-height: 687px;
             width: 657px;
             border-radius: 0;
             background: #ECFEFA;
@@ -468,20 +480,53 @@ header{
                     color: $color-black;
                 }
                 .course-form{
-                    padding: 0 100px 50px 100px;
-                    input{
-                        padding: 22px;
-                        background: $color-white;
-                        border: 0.5px solid $color-grey;
-                        box-sizing: border-box;
-                        width: 100%;
-                        margin-bottom: 40px;
-                        outline: none;
-                    }
+                    padding: 0 100px 0px 100px;
                     div{
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        margin-right: 30px;
+                        margin-bottom: 40px;
+                        width: 100%;
+                        input{
+                            padding: 22px;
+                            padding-right: 30px;
+                            background: $color-white;
+                            border: 0.5px solid $color-grey;
+                            box-sizing: border-box;
+                            width: 100%;
+                            outline: none;
+                        }
+                        .fa-exclamation-circle {
+                            position: absolute;
+                            top: 20px;
+                            right: 10px;
+                            color: red;
+                            display: none;
+                            font-size: 18px;
+                        }
+                        .fa-check{
+                            font-size: 18px;
+                            position: absolute;
+                            top: 20px;
+                            right: 10px;
+                            display: none;
+                            color: rgb(0, 255, 0);
+                        }
+                        p{
+                            position: absolute;
+                            top: 105%;
+                            left: 0;
+                            font-size: 12px;
+                            line-height: 14px;
+                            color: red;
+                            display: none;
+                        }
+                    }
+                    .course-inc-btn{
                         display: flex;
                         justify-content: end;
-                        margin-top: 40px;
+                        margin-top: 80px;
                         button{
                             border: none;
                             outline: none;
@@ -524,7 +569,7 @@ header{
         .modal-in{
             padding: 10px;
             .modal-c{
-                height: 630px;
+                min-height: 300px;
             }
             .modal-c-body{
                 h1{
@@ -532,12 +577,15 @@ header{
                     margin: 30px 0 50px 0!important;
                 }
                 .course-form{
-                    padding: 0 30px 30px 20px !important;
-                    input{
-                        padding-left: 15px!important;
-                    }
+                    padding: 0 30px 0px 20px !important;
                     div{
-                        margin-top: 0!important;
+                        margin-bottom: 50px!important;
+                        input{
+                            padding-left: 15px!important;
+                        }
+                    }
+                    .course-inc-btn{
+                        margin-top: 60px!important;
                     }
                 }
             }
@@ -679,6 +727,7 @@ header{
                 }
             }
             .item{
+                padding: 0 15px;
                 max-width: 100%;
                 max-height: auto;
                 img{
@@ -687,7 +736,7 @@ header{
                     cursor: pointer;
                 }
                 .news-content{
-                    padding: 10px 12px;
+                    padding: 20px 0px 10px 0;
                     h3{
                         font-style: normal;
                         font-weight: $font-bold;
@@ -1249,6 +1298,7 @@ header{
                 width: 33.33333%;
                 display: flex;
                 justify-content: center;
+                padding: 15px;
                 .item{
                     width: 100%;
                     img{
@@ -1742,7 +1792,11 @@ header{
                     font-size: 14px;
                     line-height: 120%;
                     letter-spacing: 0.02em;
-                    color: #000000;
+                    a{
+                        position: relative;
+                        text-decoration: none;
+                        color: #000000;
+                    }
                 }
             }
             .box-3{
@@ -1766,6 +1820,11 @@ header{
                     line-height: 120%;
                     letter-spacing: 0.02em;
                     color: #000000;
+                    a{
+                        position: relative;
+                        color: #000;
+                        text-decoration: none;
+                    }
                 }
             }
             .box-4{
@@ -1914,11 +1973,6 @@ header{
                         }
                     }
                 }
-                .item{
-                    .news-content{
-                        padding: 10px 30px;
-                    }
-                }
             }
         }
         #photos-div{
@@ -1928,9 +1982,6 @@ header{
                 }
             }
         }
-    }    
-    .main #news-div .owl-carousel .item .news-content{
-        padding: 0 10px 0 12px;
     }    
     .main #address-div .map-contact-icons .map-element-box,.main #address-div .map-contact-icons .latest-div-icons{
         width: 50%;
@@ -2132,7 +2183,7 @@ header{
         }
     }    
     .main #news-div .owl-carousel .item .news-content{
-        padding: 0 10px 0 20px;
+        padding: 20px 0px 10px 0px;
     }       
     .main #videos-div h1{
         margin-top: 40px;
@@ -2176,20 +2227,50 @@ footer{
         }
         .footer-form{
             display: flex;
-            align-items: center;
-            input{
-                width: 100%;
-                padding: 15px;
-                font-size: 14px;
-                color: $color-grey;
-                background-color: #ECFEFA;
-                border: none;
+            align-items: flex-start;
+            div{
+                display: flex;
+                flex-direction: column;
+                position: relative;
                 margin-right: 30px;
-                font-style: normal;
-                font-weight: normal;
-                line-height: 17px;
-                letter-spacing: 0.02em;
-                color: rgba(100, 100, 100, 0.5);
+                width: 100%;
+                input{
+                    width: 100%;
+                    padding: 15px 30px 15px 15px;
+                    font-size: 14px;
+                    color: $color-grey;
+                    background-color: #ECFEFA;
+                    border: none;
+                    font-style: normal;
+                    font-weight: normal;
+                    line-height: 17px;
+                    letter-spacing: 0.02em;
+                    outline: none;
+                }
+                .fa-exclamation-circle {
+                    position: absolute;
+                    top: 15px;
+                    right: 10px;
+                    color: red;
+                    display: none;
+                    font-size: 18px;
+                }
+                .fa-check{
+                    font-size: 18px;
+                    position: absolute;
+                    top: 15px;
+                    right: 10px;
+                    display: none;
+                    color: rgb(0, 255, 0);
+                }
+                p{
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+                    font-size: 12px;
+                    line-height: 14px;
+                    color: red;
+                    display: none;
+                }
             }
             button{
                 text-decoration: none;
@@ -2289,8 +2370,10 @@ footer{
         .footer-in{
             width: 90%;
             .footer-form{
-                input{
-                    font-size: 12px;
+                div{
+                    input{
+                        font-size: 12px;
+                    }
                 }
             }
         }
@@ -2303,7 +2386,6 @@ footer{
             padding-bottom: 20px;
             .footer-form{
                 display: flex;
-                align-items: center;
                 div{
                     display: flex;
                     justify-content: center;
@@ -2353,13 +2435,20 @@ footer{
                 flex-direction: column;
                 div{
                     width: 100%;
-                }
-                input{
-                    padding: 10px;
-                    width: 100%;
-                    margin-bottom: 5px;
                     margin-right: 0;
+                    position: relative;
+                    align-items: flex-start;
+                    input{
+                        padding: 10px;
+                        width: 100%;
+                        margin-bottom: 5px;
+                        margin-right: 0;
+                    }
+                    i{
+                        top: 10px!important;
+                    }
                 }
+                
                 button{
                     margin-top: 20px;
                     padding: 10px 25px;
