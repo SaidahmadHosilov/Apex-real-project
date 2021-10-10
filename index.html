@@ -39,16 +39,18 @@
                 <h3 class="font-head-h my-0">APEX TA'LIM</h3>
             </div>
             <div class="right-header-nav">
-                <ul>
-                    <li><a href="#news-div">Yangiliklar</a></li>
-                    <li><a href="#courses-div">Kurslar</a></li>
-                    <li><a href="#teachers-div">Ustozlar</a></li>
-                    <li><a href="#photos-div">Fotolavhalar</a></li>
-                    <li><a href="#videos-div">Videolavhalar</a></li>
-                    <li><a href="#result-div">Natijalar</a></li>
-                    <li><a href="#commits-div">Izohlar</a></li>
-                    <li><a href="#footer">Aloqa</a></li>
-                </ul>
+                <div class="menu-inc">
+                    <ul>
+                        <li><a href="#news-div">Yangiliklar</a></li>
+                        <li><a href="#courses-div">Kurslar</a></li>
+                        <li><a href="#teachers-div">Ustozlar</a></li>
+                        <li><a href="#photos-div">Fotolavhalar</a></li>
+                        <li><a href="#videos-div">Videolavhalar</a></li>
+                        <li><a href="#result-div">Natijalar</a></li>
+                        <li><a href="#commits-div">Izohlar</a></li>
+                        <li><a href="#footer">Aloqa</a></li>
+                    </ul>
+                </div>
             </div>
             <i id="toggle-menu" class="fas fa-bars"></i>
             <i id="toggle-menu-x" class="fas fa-times"></i>
@@ -88,7 +90,7 @@
                             <p class="header-name-error">3 tadan kam bo'lmagan va 30 tadan ko'p bo'lmagan, lotin harflaridan iborat bo'lishi kerak</p>
                         </div>
                         <div>
-                            <input class="header-tel" id="phone" type="tel" required name="phone-number" placeholder="Telefon raqamingizni yozing">
+                            <input class="header-tel" id="header-phone" type="tel" required name="phone-number" placeholder="Telefon raqamingizni yozing">
                             <i class="fas fa-exclamation-circle tel-error"></i>
                             <i class="fas fa-check tel-success"></i>
                             <p class="header-tel-error">Telefon raqamni to'g'ri formatda kiritish kerak</p>
@@ -1201,6 +1203,7 @@
             $.mask.definitions['9'] = '';
             $.mask.definitions['x'] = '[0-9]';
             $("#phone").mask("+998 (xx) xxx-xx-xx");
+            $("#header-phone").mask("+998 (xx) xxx-xx-xx");
         })
     </script>
     <!-- ******************* Masks ******************* -->

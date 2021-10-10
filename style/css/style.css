@@ -276,7 +276,12 @@ header nav .right-header-nav ul li a {
   }
 }
 header nav .right-header-nav.active-menu {
-  height: auto;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  overflow-y: auto;
+  left: 0;
+  right: 0;
   opacity: 1;
   transform: translateY(0px);
   transition: 0.4s;
@@ -289,6 +294,7 @@ header nav #toggle-menu, header nav #toggle-menu-x {
   margin-right: 20px;
   cursor: pointer;
   transition: 0.3s;
+  z-index: 10;
 }
 header nav #toggle-menu:hover, header nav #toggle-menu-x:hover {
   transition: 0.3s;
@@ -405,26 +411,39 @@ header .header-content .row .header-content-in .font-header-btn:hover {
     right: 70px;
   }
   header nav {
-    position: relative;
-    padding-left: 10%;
-    padding-right: 10%;
+    max-width: 100%;
+    padding-left: 12%;
+    padding-right: 12%;
   }
   header nav .right-header-nav {
-    position: absolute;
+    position: fixed;
     left: 0;
+    top: 0;
+    padding-top: 130px;
     width: 100%;
-    top: 100%;
     transform: translateY(-30px);
-    height: auto;
     opacity: 0;
     overflow: hidden;
     transition: 0.4s;
     z-index: -5;
-    background: #00445B;
     box-shadow: 5px 3px 10px #1f1f1f;
+    overflow-y: auto;
+    height: 100%;
+  }
+  header nav .right-header-nav .menu-inc {
+    padding-bottom: 30px;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    background: #00445B;
+    overflow-y: auto;
   }
   header nav .right-header-nav ul {
-    padding: 30px 40px 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 30px 25px 10px 100px;
     flex-direction: column;
   }
   header nav .right-header-nav ul li {
@@ -465,6 +484,9 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   header nav {
     padding: 20px 30px;
     max-width: 900px;
+  }
+  header nav .right-header-nav ul {
+    padding-left: 25px;
   }
   header .header-content {
     max-width: 900px;
@@ -544,6 +566,9 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   header nav {
     padding-left: 2%;
     padding-right: 2%;
+  }
+  header nav .right-header-nav ul {
+    padding-left: 10px;
   }
   header .header-content .row div h1 {
     font-size: 30px;
@@ -841,6 +866,11 @@ header .header-content .row .header-content-in .font-header-btn:hover {
 .main #news-div .owl-carousel .owl-dots .owl-dot.active span {
   background-color: #00445B;
 }
+@media screen and (max-width: 700px) {
+  .main #news-div .owl-carousel .owl-dots {
+    display: none;
+  }
+}
 .main #news-div .owl-carousel .item {
   padding: 0 15px;
   max-width: 100%;
@@ -1064,6 +1094,11 @@ header .header-content .row .header-content-in .font-header-btn:hover {
 }
 .main #courses-div .owl-dots .owl-dot.active span {
   background-color: #00445B;
+}
+@media screen and (max-width: 700px) {
+  .main #courses-div .owl-dots {
+    display: none;
+  }
 }
 .main #courses-div .owl-stage {
   display: flex;
@@ -1318,6 +1353,11 @@ header .header-content .row .header-content-in .font-header-btn:hover {
 .main #teachers-div .owl-dots .owl-dot.active span {
   background-color: #00445B;
 }
+@media screen and (max-width: 700px) {
+  .main #teachers-div .owl-dots {
+    display: none;
+  }
+}
 .main #teachers-div .owl-stage {
   display: flex;
 }
@@ -1488,6 +1528,11 @@ header .header-content .row .header-content-in .font-header-btn:hover {
 .main #videos-div .owl-dots .owl-dot.active span {
   background-color: #00445B;
 }
+@media screen and (max-width: 700px) {
+  .main #videos-div .owl-dots {
+    display: none;
+  }
+}
 .main #videos-div .owl-carousel .item .video-item {
   padding: 0 15px;
 }
@@ -1629,6 +1674,11 @@ header .header-content .row .header-content-in .font-header-btn:hover {
 .main #result-div .owl-dots .owl-dot.active span {
   background-color: #00445B;
 }
+@media screen and (max-width: 700px) {
+  .main #result-div .owl-dots {
+    display: none;
+  }
+}
 .main #result-div .owl-stage {
   display: flex;
 }
@@ -1700,6 +1750,11 @@ header .header-content .row .header-content-in .font-header-btn:hover {
 }
 .main #commits-div .owl-dots .owl-dot.active span {
   background-color: #00445B;
+}
+@media screen and (max-width: 700px) {
+  .main #commits-div .owl-dots {
+    display: none;
+  }
 }
 .main #commits-div .owl-stage {
   display: flex;
@@ -2427,6 +2482,21 @@ footer .footer-in .footer-down .copyright-footer p {
   }
   footer .footer-in .footer-down .footer-logo {
     padding-right: 10px;
+  }
+}
+@media screen and (max-width: 600px) {
+  header nav .right-header-nav.active-menu {
+    padding-top: 100px;
+  }
+
+  footer .footer-in .footer-down .footer-logo svg {
+    width: 70px !important;
+    height: 70px !important;
+  }
+
+  header nav .left-header-nav svg {
+    width: 70px;
+    height: 70px;
   }
 }
 @media screen and (max-width: 400px) {

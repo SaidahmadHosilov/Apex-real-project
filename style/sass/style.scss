@@ -97,7 +97,12 @@ header{
             }
         }
         .right-header-nav.active-menu{
-            height: auto;
+            min-height: 100vh;
+            position: absolute;
+            top: 0;
+            overflow-y: auto;
+            left: 0;
+            right: 0;
             opacity: 1;
             transform: translateY(0px);
             transition: 0.4s;
@@ -110,6 +115,7 @@ header{
             margin-right: 20px;
             cursor: pointer;
             transition: 0.3s;
+            z-index: 10;
         }
         #toggle-menu:hover,#toggle-menu-x:hover{
             transition: 0.3s;
@@ -234,43 +240,56 @@ header{
             right: 70px;
         }
         nav{
-            position: relative;
-            padding-left: 10%;
-            padding-right: 10%;
+            max-width: 100%;
+            padding-left: 12%;
+            padding-right: 12%;
             .right-header-nav{
-                position: absolute;
+                position: fixed;
                 left: 0;
+                top: 0;
+                padding-top: 130px;
                 width: 100%;
-                top: 100%;
                 transform: translateY(-30px);
-                height: auto;
                 opacity: 0;
                 overflow: hidden;
                 transition: 0.4s;
                 z-index: -5;
-                background: $color-primary;
                 box-shadow: 5px 3px 10px rgb(31, 31, 31);
-                ul{
-                    padding: 30px 40px 10px;
-                    flex-direction: column;
-                    li{
-                        margin: 0;
-                        width: 100%;
-                        display: flex;
+                overflow-y: auto;
+                height: 100%;    
+                .menu-inc{
+                    padding-bottom: 30px;
+                    height: 100%;    
+                    position: relative;
+                    width: 100%;
+                    background: $color-primary;
+                    overflow-y: auto;
+                }
+                    ul{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        padding: 30px 25px 10px 100px;
                         flex-direction: column;
-                        justify-content: center;
-                        a{
-                            padding: 10px 7px;
-                            color: $color-white;
-                            font-weight: 700;
+                        li{
+                            margin: 0;
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            a{
+                                padding: 10px 7px;
+                                color: $color-white;
+                                font-weight: 700;
+                            }
+                        }
+                        li:hover{
+                            outline: 3px solid $color-white;
+                            font-size: 700;
+                            cursor: pointer;
                         }
                     }
-                    li:hover{
-                        outline: 3px solid $color-white;
-                        font-size: 700;
-                        cursor: pointer;
-                    }
-                }   
             }
             #toggle-menu{
                 display: block;
@@ -297,6 +316,11 @@ header{
         nav{
             padding: 20px 30px;
             max-width: 900px;
+            .right-header-nav{
+                ul{
+                    padding-left: 25px;
+                }
+            }
         }
         .header-content{
             max-width: 900px;
@@ -383,6 +407,11 @@ header{
         nav{
             padding-left: 2%;
             padding-right: 2%;
+            .right-header-nav{
+                ul{
+                    padding-left: 10px;
+                }
+            }
         }
         .header-content{
             .row{
@@ -726,6 +755,11 @@ header{
                     }
                 }
             }
+            @media screen and (max-width:700px){
+                .owl-dots{
+                    display: none;
+                }
+            }
             .item{
                 padding: 0 15px;
                 max-width: 100%;
@@ -964,6 +998,11 @@ header{
                 span{
                     background-color: $color-primary;
                 }
+            }
+        }
+        @media screen and (max-width:700px){
+            .owl-dots{
+                display: none;
             }
         }
         .owl-stage{
@@ -1230,6 +1269,11 @@ header{
                 }
             }
         }
+        @media screen and (max-width:700px){
+            .owl-dots{
+                display: none;
+            }
+        }
         .owl-stage{
             display: flex;
             .item{
@@ -1415,6 +1459,11 @@ header{
                 }
             }
         }
+        @media screen and (max-width:700px){
+            .owl-dots{
+                display: none;
+            }
+        }
         .owl-carousel{
             .item{
                 .video-item{
@@ -1569,6 +1618,11 @@ header{
                 }
             }
         }
+        @media screen and (max-width:700px){
+            .owl-dots{
+                display: none;
+            }
+        }
         .owl-stage{
             display: flex;
             .owl-item{
@@ -1650,6 +1704,11 @@ header{
                 span{
                     background-color: $color-primary;
                 }
+            }
+        }
+        @media screen and (max-width:700px){
+            .owl-dots{
+                display: none;
             }
         }
         .owl-stage{
@@ -2460,6 +2519,20 @@ footer{
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 600px){
+    header nav .right-header-nav.active-menu{
+        padding-top: 100px;
+    }
+    footer .footer-in .footer-down .footer-logo svg{
+        width: 70px !important;
+        height: 70px !important;
+    }
+    header nav .left-header-nav svg {
+        width: 70px;
+        height: 70px;
     }
 }
 

@@ -3,13 +3,25 @@
 let menuIcon = document.getElementById('toggle-menu');
 let menu = document.querySelector('.right-header-nav');
 let menuIconX = document.getElementById('toggle-menu-x');
+let menuLinks = document.querySelectorAll('.right-header-nav li');
+
+for(const link of menuLinks){
+    link.addEventListener('click', function(){
+        document.body.style.overflow = 'auto';
+        menu.classList.remove('active-menu');
+        menuIconX.style.display = 'none';
+        menuIcon.style.display = 'block'
+    })
+}
 
 menuIcon.addEventListener('click', function(){
     menu.classList.add('active-menu');
     menuIcon.style.display = 'none';
-    menuIconX.style.display = 'block'
+    menuIconX.style.display = 'block';
+    document.body.style.overflow = 'hidden';
 })
 menuIconX.addEventListener('click', function(){
+    document.body.style.overflow = 'auto';
     menu.classList.remove('active-menu');
     menuIconX.style.display = 'none';
     menuIcon.style.display = 'block'
@@ -389,6 +401,13 @@ $(document).ready(function(){
     
     // News Carousel
     $("#news-div .owl-carousel").owlCarousel({
+        items: 3,
+        autoplay:true,
+        autoPlayTimeout:3000,
+        autoplaySpeed:3000,
+        autoHeight:false,
+        margin:3,
+        autoplayHoverPause:false,
         loop: true,
         nav: false,
         dots: true,
@@ -413,6 +432,13 @@ $(document).ready(function(){
 
     // Courses Carousel
     $("#courses-div .owl-carousel").owlCarousel({
+        items: 3,
+        autoplay:true,
+        autoPlayTimeout:3000,
+        autoplaySpeed:3000,
+        autoHeight:false,
+        margin:3,
+        autoplayHoverPause:false,
         loop: true,
         nav: false,
         dots: true,
@@ -437,6 +463,13 @@ $(document).ready(function(){
 
     // Teachers Carousel
     $("#teachers-div .owl-carousel").owlCarousel({
+        items: 3,
+        autoplay:true,
+        autoPlayTimeout:3000,
+        autoplaySpeed:3000,
+        autoHeight:false,
+        margin:3,
+        autoplayHoverPause:false,
         loop: true,
         nav: false,
         dots: true,
@@ -461,6 +494,13 @@ $(document).ready(function(){
 
     // Videos Carousel
     $("#videos-div .owl-carousel").owlCarousel({
+        items: 3,
+        autoplay:true,
+        autoPlayTimeout:3000,
+        autoplaySpeed:3000,
+        autoHeight:false,
+        margin:3,
+        autoplayHoverPause:false,
         loop: true,
         nav: false,
         dots: true,
@@ -485,6 +525,13 @@ $(document).ready(function(){
 
     // Results Carousel
     $("#result-div .owl-carousel").owlCarousel({
+        items: 3,
+        autoplay:true,
+        autoPlayTimeout:3000,
+        autoplaySpeed:3000,
+        autoHeight:false,
+        margin:3,
+        autoplayHoverPause:false,
         loop: true,
         nav: false,
         dots: true,
@@ -509,6 +556,13 @@ $(document).ready(function(){
 
     // Commits Carousel
     $("#commits-div .owl-carousel").owlCarousel({
+        items: 3,
+        autoplay:true,
+        autoPlayTimeout:3000,
+        autoplaySpeed:3000,
+        autoHeight:false,
+        margin:3,
+        autoplayHoverPause:false,
         loop: true,
         nav: false,
         dots: true,
@@ -517,7 +571,7 @@ $(document).ready(function(){
                 items: 1
             },
             600:{
-                items: 1
+                items: 1,
             },
             700:{
                 items: 2
