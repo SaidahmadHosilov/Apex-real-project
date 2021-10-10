@@ -294,7 +294,6 @@ header nav #toggle-menu, header nav #toggle-menu-x {
   margin-right: 20px;
   cursor: pointer;
   transition: 0.3s;
-  z-index: 10;
 }
 header nav #toggle-menu:hover, header nav #toggle-menu-x:hover {
   transition: 0.3s;

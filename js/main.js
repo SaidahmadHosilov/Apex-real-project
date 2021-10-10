@@ -7,10 +7,12 @@ let menuLinks = document.querySelectorAll('.right-header-nav li');
 
 for(const link of menuLinks){
     link.addEventListener('click', function(){
-        document.body.style.overflow = 'auto';
-        menu.classList.remove('active-menu');
-        menuIconX.style.display = 'none';
-        menuIcon.style.display = 'block'
+        if(document.body.clientWidth <= 950){
+            document.body.style.overflow = 'auto';
+            menu.classList.remove('active-menu');
+            menuIconX.style.display = 'none';
+            menuIcon.style.display = 'block';
+        }
     })
 }
 
@@ -19,8 +21,10 @@ menuIcon.addEventListener('click', function(){
     menuIcon.style.display = 'none';
     menuIconX.style.display = 'block';
     document.body.style.overflow = 'hidden';
+    menuIconX.style.zIndex = 10;
 })
 menuIconX.addEventListener('click', function(){
+    menuIconX.style.zIndex = -1;
     document.body.style.overflow = 'auto';
     menu.classList.remove('active-menu');
     menuIconX.style.display = 'none';
