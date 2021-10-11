@@ -295,6 +295,10 @@ header nav #toggle-menu, header nav #toggle-menu-x {
   cursor: pointer;
   transition: 0.3s;
 }
+header nav #toggle-menu-x {
+  width: 20px;
+  height: 30px;
+}
 header nav #toggle-menu:hover, header nav #toggle-menu-x:hover {
   transition: 0.3s;
   transform: rotate(180deg);
@@ -463,6 +467,8 @@ header .header-content .row .header-content-in .font-header-btn:hover {
     cursor: pointer;
   }
   header nav #toggle-menu {
+    width: 40px;
+    height: 50px;
     display: block;
   }
   header .header-content {
@@ -874,10 +880,42 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   padding: 0 15px;
   max-width: 100%;
   max-height: auto;
+  position: relative;
+  overflow-x: hidden;
+}
+.main #news-div .owl-carousel .item .more-news-box {
+  background-color: rgba(177, 168, 172, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  transform: translateX(-100%);
+  transition: 0.5s;
+}
+.main #news-div .owl-carousel .item .more-news-box p {
+  color: #fff;
+  padding: 5px 15px;
+  font-size: 14px;
+  letter-spacing: 5px;
+}
+.main #news-div .owl-carousel .item .more-news-box svg {
+  width: 30px;
+  height: 30px;
 }
 .main #news-div .owl-carousel .item img {
   width: 100%;
   object-fit: cover;
+}
+.main #news-div .owl-carousel .item img:hover ~ .more-news-box {
+  transition: 0.5s;
+  left: 15px;
+  transform: translateX(0);
+}
+.main #news-div .owl-carousel .item .more-news-box:hover {
+  transition: 0.5s;
+  left: 15px;
+  transform: translateX(0);
   cursor: pointer;
 }
 .main #news-div .owl-carousel .item .news-content {
@@ -1108,6 +1146,8 @@ header .header-content .row .header-content-in .font-header-btn:hover {
 }
 .main #courses-div .owl-stage .item .course-item {
   height: 100%;
+  overflow-x: hidden;
+  position: relative;
   padding: 0 15px;
 }
 .main #courses-div .owl-stage .item .course-item .course-main {
@@ -1115,6 +1155,7 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   background-color: #ECFEFA;
   width: 100%;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.13);
+  overflow-x: hidden;
 }
 .main #courses-div .owl-stage .item .course-item .course-main .hidden {
   display: none;
@@ -1122,6 +1163,36 @@ header .header-content .row .header-content-in .font-header-btn:hover {
 .main #courses-div .owl-stage .item .course-item .course-main img {
   width: 100%;
   object-fit: cover;
+}
+.main #courses-div .owl-stage .item .course-item .course-main .more-course-box {
+  background-color: rgba(177, 168, 172, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  transform: translateX(-100%);
+  transition: 0.5s;
+}
+.main #courses-div .owl-stage .item .course-item .course-main .more-course-box p {
+  color: #fff;
+  padding: 5px 15px;
+  font-size: 14px;
+  letter-spacing: 5px;
+}
+.main #courses-div .owl-stage .item .course-item .course-main .more-course-box svg {
+  width: 30px;
+  height: 30px;
+}
+.main #courses-div .owl-stage .item .course-item .course-main img:hover ~ .more-course-box {
+  transition: 0.5s;
+  left: 15px;
+  transform: translateX(0);
+}
+.main #courses-div .owl-stage .item .course-item .course-main .more-course-box:hover {
+  transition: 0.5s;
+  left: 15px;
+  transform: translateX(0);
   cursor: pointer;
 }
 .main #courses-div .owl-stage .item .course-item .course-main .course-content {
@@ -1135,7 +1206,6 @@ header .header-content .row .header-content-in .font-header-btn:hover {
   line-height: 22px;
   letter-spacing: 0.02em;
   color: #000;
-  cursor: pointer;
 }
 .main #courses-div .owl-stage .item .course-item .course-main .course-content p {
   margin-bottom: 30px;
@@ -2504,19 +2574,21 @@ footer .footer-in .footer-down .copyright-footer p {
   }
 }
 /* ========== !Footer ========= */
-.toTop a i {
+.toTop a svg {
   font-size: 35px;
   position: fixed;
   bottom: 30px;
   right: 30px;
   color: #00445B;
   opacity: 0;
+  width: 30px;
+  height: 30px;
   transition: 0.5s;
   background-color: #ECFEFA;
   border-radius: 50%;
 }
 
-.toTop.toTopActive a i {
+.toTop.toTopActive a svg {
   transition: 0.1s;
   opacity: 1;
   animation: animForToTop 1 1s;

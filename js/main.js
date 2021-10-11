@@ -102,8 +102,9 @@ var hdrErrorMsgName = document.querySelector('.header-name-error');
 hdrName.addEventListener('keyup', function(){
     var success = document.querySelector('.name-success');
     var error = document.querySelector('.name-error');
+    let res = /^[a-zA-Z]+$/;
 
-    if( hdrName.value.length >= 3 && hdrName.value.length < 30 && hdrName.value.match(/[-!$%^&*()_+|~=`{}\[\]:";<> \\?,.\/0-9]/) == null ){
+    if( res.test(hdrName.value) && hdrName.value.length >= 3 && hdrName.value.length < 30 && hdrName.value.match(/[-!$%^&*()_+|~=`{}\[\]:";<> \\?,.\/0-9]/) == null ){
 
         error.style.display = 'none';
         success.style.display = 'block';
@@ -259,8 +260,9 @@ var errorMsgName = document.querySelector('.ftr-name-error');
 ftrName.addEventListener('keyup', function(){
     var success = ftrForm.querySelector('.name-success');
     var error = ftrForm.querySelector('.name-error');
+    let res = /^[a-zA-Z]+$/;
 
-    if( ftrName.value.length >= 3 && ftrName.value.length < 30 && ftrName.value.match(/[-!$%^&*()_+|~=`{}\[\]:";<> \\?,.\/0-9]/) == null ){
+    if( res.test(ftrName.value) && ftrName.value.length >= 3 && ftrName.value.length < 30 && ftrName.value.match(/[-!$%^&*()_+|~=`{}\[\]:";<> \\?,.\/0-9]/) == null ){
 
         error.style.display = 'none';
         success.style.display = 'block';
@@ -299,7 +301,7 @@ var errorMsgEmail = document.querySelector('.ftr-email-error');
 ftrEmail.addEventListener('keyup', function(){
     var success = ftrForm.querySelector('.email-success');
     var error = ftrForm.querySelector('.email-error');
-    let regExp = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    let regExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     
     if( ftrEmail.value.match(regExp)){
         
@@ -595,23 +597,23 @@ $(document).ready(function(){
 // News Modal
 let newsModal = document.querySelector('.new-modal');
 let closeNewsModal = document.querySelector('.new-item-top i');
-let newsImages = document.querySelectorAll('.new-image');
+let newsInfo = document.querySelectorAll('.more-news-box');
 
-for(const image of newsImages){
-    image.addEventListener('click', function(evt){
-        let imgSrc = evt.target.getAttribute('src'); 
-        let newsTitle = evt.target.parentElement.querySelector('h3')
-        let newsDate = evt.target.parentElement.querySelector('span')
+for(const info of newsInfo){
+    info.addEventListener('click', function(evt){
+        let imgSrc = evt.currentTarget.parentElement.querySelector('.new-image').getAttribute('src'); 
+        let newsTitle = evt.currentTarget.parentElement.querySelector('h3')
+        let newsDate = evt.currentTarget.parentElement.querySelector('span')
 
         document.getElementById('new-modal-img').src = imgSrc;
         document.getElementById('title-img-modal').innerHTML = newsTitle.textContent;
         document.getElementById('img-modal-date').innerHTML = newsDate.textContent;
         document.getElementById('some-info').innerHTML = 
-        evt.target.parentElement.querySelector('.some-info').textContent;
+        evt.currentTarget.parentElement.querySelector('.some-info').textContent;
         document.getElementById('desc_title').innerHTML = 
-        evt.target.parentElement.querySelector('.desc_title').textContent;
+        evt.currentTarget.parentElement.querySelector('.desc_title').textContent;
         document.getElementById('description').innerHTML = 
-        evt.target.parentElement.querySelector('.description').textContent;
+        evt.currentTarget.parentElement.querySelector('.description').textContent;
         
 
         newsModal.classList.add('new-modal-active');
@@ -636,7 +638,7 @@ closeNewsModal.addEventListener('click', function(){
 // Course intro
 let courseIntroX = document.getElementById('course-intro-close');
 let courseIntroModal = document.querySelector('.course-modal-intro');
-let introImages = document.querySelectorAll('.course-main img');
+let introImages = document.querySelectorAll('.course-main .more-course-box');
 let introCrsH3 = document.querySelectorAll('.course-main h3');
 
 document.querySelector('.course-btn-info').addEventListener('click', function(){
@@ -648,15 +650,9 @@ document.querySelector('.course-btn-info').addEventListener('click', function(){
     modalCourse.classList.add('modal-course-active');
 })
 
-for(const h of introCrsH3){
-    h.addEventListener('click', function(){
-        courseIntroModal.classList.add('course-modal-intro-active');
-        document.body.style.overflow = 'hidden';   
-    })
-}
 for(const img of introImages){
     img.addEventListener('click', function(evt){
-        var parentE = evt.target.parentElement; 
+        var parentE = evt.currentTarget.parentElement; 
 
         document.querySelector('.item-top-left img').src = 
             parentE.querySelector('img').getAttribute('src');
