@@ -2409,8 +2409,28 @@ footer .footer-in .line-footer {
 footer .footer-in .footer-down {
   position: relative;
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
+}
+footer .footer-in .footer-down .footer-logo-rizqim {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+}
+footer .footer-in .footer-down .footer-logo-rizqim a svg {
+  width: 150px;
+}
+footer .footer-in .footer-down .footer-logo-rizqim div h3 {
+  margin-bottom: -5px;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #000;
 }
 footer .footer-in .footer-down .footer-logo {
   display: flex;
@@ -2451,7 +2471,7 @@ footer .footer-in .footer-down .copyright-footer {
   position: absolute;
   left: 50%;
   transform: translateX(-50%) translateY(-100%);
-  top: 100%;
+  top: 110%;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -2505,12 +2525,7 @@ footer .footer-in .footer-down .copyright-footer p {
   footer .footer-in .footer-down {
     width: 100%;
     display: flex;
-    flex-direction: column;
-  }
-  footer .footer-in .footer-down .footer-down > div {
-    width: 100%;
-    justify-content: center;
-    display: flex;
+    align-items: center;
   }
   footer .footer-in .footer-down .footer-logo {
     padding-right: 10px;
@@ -2518,6 +2533,9 @@ footer .footer-in .footer-down .copyright-footer p {
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
+  }
+  footer .footer-in .footer-down .copyright-footer {
+    top: 105%;
   }
 }
 @media screen and (max-width: 830px) {
@@ -2553,19 +2571,40 @@ footer .footer-in .footer-down .copyright-footer p {
     padding-right: 10px;
   }
 }
+@media screen and (max-width: 625px) {
+  footer .footer-in .footer-down {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
 @media screen and (max-width: 600px) {
   header nav .right-header-nav.active-menu {
     padding-top: 100px;
   }
 
+  footer .footer-in .footer-down .footer-logo {
+    margin-bottom: 10px;
+  }
   footer .footer-in .footer-down .footer-logo svg {
     width: 70px !important;
     height: 70px !important;
   }
 
+  footer .footer-in .footer-down .footer-logo-rizqim div h3 {
+    margin-bottom: -15px;
+  }
+
   header nav .left-header-nav svg {
     width: 70px;
     height: 70px;
+  }
+
+  footer .footer-in .footer-down .copyright-footer {
+    top: 105%;
+  }
+  footer .footer-in .footer-down .copyright-footer p {
+    font-size: 12px;
   }
 }
 @media screen and (max-width: 400px) {

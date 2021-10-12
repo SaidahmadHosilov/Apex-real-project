@@ -2427,8 +2427,32 @@ footer{
         .footer-down{
             position: relative;
             display: flex;
+            justify-content: space-between;
             flex-wrap: wrap;
             width: 100%;
+            .footer-logo-rizqim{
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                flex-direction: column;
+                a{
+                    svg{
+                        width: 150px;
+                    }
+                }
+                div{
+                    h3{
+                        margin-bottom: -5px;
+                        text-decoration: none;
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 15px;
+                        text-align: center;
+                        letter-spacing: 0.02em;
+                        color: #000;
+                    }
+                }
+            }
             .footer-logo{
                 display: flex;
                 justify-content: start;
@@ -2468,7 +2492,7 @@ footer{
                 position: absolute;
                 left: 50%;
                 transform: translateX(-50%) translateY(-100%);
-                top: 100%;
+                top: 110%;
                 width: 100%;
                 display: flex;
                 justify-content: center;
@@ -2534,18 +2558,16 @@ footer{
             .footer-down{
                 width: 100%;
                 display: flex;
-                flex-direction: column;
-                .footer-down>div{
-                    width: 100%;
-                    justify-content: center;
-                    display: flex;
-                }
+                align-items: center;
                 .footer-logo{
                     padding-right: 10px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     margin-bottom: 30px;
+                }
+                .copyright-footer{
+                    top: 105%;
                 }
             }
         }
@@ -2590,18 +2612,36 @@ footer{
         }
     }
 }
-
+@media screen and (max-width: 625px){
+    footer .footer-in .footer-down{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
 @media screen and (max-width: 600px){
     header nav .right-header-nav.active-menu{
         padding-top: 100px;
     }
-    footer .footer-in .footer-down .footer-logo svg{
-        width: 70px !important;
-        height: 70px !important;
+    footer .footer-in .footer-down .footer-logo {
+        margin-bottom: 10px;
+        svg{
+            width: 70px !important;
+            height: 70px !important;
+        }
+    }
+    footer .footer-in .footer-down .footer-logo-rizqim div h3{
+        margin-bottom: -15px;
     }
     header nav .left-header-nav svg {
         width: 70px;
         height: 70px;
+    }
+    footer .footer-in .footer-down .copyright-footer{
+        top: 105%;
+        p{
+            font-size: 12px;
+        }
     }
 }
 
