@@ -602,18 +602,18 @@ let newsInfo = document.querySelectorAll('.more-news-box');
 for(const info of newsInfo){
     info.addEventListener('click', function(evt){
         let imgSrc = evt.currentTarget.parentElement.querySelector('.new-image').getAttribute('src'); 
-        let newsTitle = evt.currentTarget.parentElement.querySelector('h3')
-        let newsDate = evt.currentTarget.parentElement.querySelector('span')
+        let newsTitle = evt.currentTarget.parentElement.parentElement.querySelector('h3')
+        let newsDate = evt.currentTarget.parentElement.parentElement.querySelector('span')
 
         document.getElementById('new-modal-img').src = imgSrc;
         document.getElementById('title-img-modal').innerHTML = newsTitle.textContent;
         document.getElementById('img-modal-date').innerHTML = newsDate.textContent;
         document.getElementById('some-info').innerHTML = 
-        evt.currentTarget.parentElement.querySelector('.some-info').textContent;
+        evt.currentTarget.parentElement.parentElement.querySelector('.some-info').textContent;
         document.getElementById('desc_title').innerHTML = 
-        evt.currentTarget.parentElement.querySelector('.desc_title').textContent;
+        evt.currentTarget.parentElement.parentElement.querySelector('.desc_title').textContent;
         document.getElementById('description').innerHTML = 
-        evt.currentTarget.parentElement.querySelector('.description').textContent;
+        evt.currentTarget.parentElement.parentElement.querySelector('.description').textContent;
         
 
         newsModal.classList.add('new-modal-active');
@@ -652,7 +652,7 @@ document.querySelector('.course-btn-info').addEventListener('click', function(){
 
 for(const img of introImages){
     img.addEventListener('click', function(evt){
-        var parentE = evt.currentTarget.parentElement; 
+        var parentE = evt.currentTarget.parentElement.parentElement; 
 
         document.querySelector('.item-top-left img').src = 
             parentE.querySelector('img').getAttribute('src');

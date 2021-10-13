@@ -771,19 +771,28 @@ header{
                 max-height: auto;
                 position: relative;
                 overflow-x: hidden;
+                .item-img-box{
+                    position: relative;
+                    overflow-x: hidden;
+                }
                 .more-news-box{
-                    background-color: rgba(177, 168, 172, 0.8);
+                    background-color: rgba(202, 199, 199, 0.616);
                     position: absolute;
                     top: 0;
                     left: 0;
+                    right: 0;
+                    bottom: 0;
                     display: flex;
                     align-items: center;
-                    transform: translateX(-100%);
+                    opacity: 0;
+                    z-index: -3;
                     transition: 0.5s;
+                    justify-content: center;
                     p{
-                        color: $color-white;
+                        color: $color-black;
+                        font-weight: $font-bold;
                         padding: 5px 15px ;
-                        font-size: 14px;
+                        font-size: 18px;
                         letter-spacing: 5px;
                     }
                     svg{
@@ -797,13 +806,15 @@ header{
                 }
                 img:hover ~ .more-news-box{
                     transition: 0.5s;
-                    left: 15px;
-                    transform: translateX(0);
+                    left: 0px;
+                    opacity: 1;
+                    z-index: 3;
                 }
                 .more-news-box:hover{
+                    opacity: 1;
+                    z-index: 3;
                     transition: 0.5s;
-                    left: 15px;
-                    transform: translateX(0);
+                    left: 0px;
                     cursor: pointer;
                 }
                 .news-content{
@@ -1061,23 +1072,28 @@ header{
                         .hidden{
                             display: none;
                         }
-                        img{
-                            width: 100%;
-                            object-fit: cover;
+                        .course-img-container{
+                            position: relative;
+                            overflow-x: hidden;
                         }
                         .more-course-box{
-                            background-color: rgba(177, 168, 172, 0.8);
+                            background-color: rgba(202, 199, 199, 0.616);
                             position: absolute;
                             top: 0;
                             left: 0;
+                            right: 0;
+                            bottom: 0;
                             display: flex;
                             align-items: center;
-                            transform: translateX(-100%);
+                            opacity: 0;
+                            z-index: -3;
                             transition: 0.5s;
+                            justify-content: center;
                             p{
-                                color: $color-white;
+                                color: $color-black;
+                                font-weight: $font-bold;
                                 padding: 5px 15px ;
-                                font-size: 14px;
+                                font-size: 18px;
                                 letter-spacing: 5px;
                             }
                             svg{
@@ -1085,15 +1101,21 @@ header{
                                 height: 30px;
                             }
                         }
+                        img{
+                            width: 100%;
+                            object-fit: cover;
+                        }
                         img:hover ~ .more-course-box{
                             transition: 0.5s;
-                            left: 15px;
-                            transform: translateX(0);
+                            left: 0px;
+                            opacity: 1;
+                            z-index: 3;
                         }
                         .more-course-box:hover{
+                            opacity: 1;
+                            z-index: 3;
                             transition: 0.5s;
-                            left: 15px;
-                            transform: translateX(0);
+                            left: 0px;
                             cursor: pointer;
                         }
                         .course-content{
